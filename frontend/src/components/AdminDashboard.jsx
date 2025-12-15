@@ -147,7 +147,53 @@ const AdminDashboard = ({
           </div>
         )}
 
-        {["Logistik", "Einstellungen", "Abmelden"].includes(activeTab) && (
+        {activeTab === "Logistik" && (
+          <div className="admin-orders">
+            <h3>Lieferungen / Logistik</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nr</th>
+                  <th>Kunde</th>
+                  <th>Lieferart</th>
+                  <th>Adresse / Abholung</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order) => (
+                  <tr key={order.id}>
+                    <td>{order.id.toString().padStart(4, "0")}</td>
+                    <td>
+                      {order.first_name} {order.last_name}
+                    </td>
+                    <td>{order.delivery_type === "pickup" ? "Abholung" : "Lieferung"}</td>
+                    <td>
+                      {order.delivery_type === "pickup"
+                        ? "Abholung vor Ort"
+                        : `${order.street} ${order.house_number}, ${order.postal_code} ${order.city}`}
+                    </td>
+                    <td>
+                      <select
+                        className={statusPalette[order.status]}
+                        value={order.status}
+                        onChange={(event) => onStatusChange?.(order.id, event.target.value)}
+                      >
+                        {Object.entries(statusLabels).map(([value, label]) => (
+                          <option value={value} key={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {["Einstellungen", "Abmelden"].includes(activeTab) && (
           <div className="admin-placeholder">
             Inhalte für „{activeTab}“ können hier ergänzt werden.
           </div>
