@@ -183,6 +183,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .product-card {
@@ -192,11 +193,12 @@ main {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .product-image {
   background: #eceff5;
-  height: 160px;
+  height: 200px;
   border-radius: 24px 24px 0 0;
   overflow: hidden;
 }
@@ -213,12 +215,18 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  flex: 1;
+}
+
+.product-body h3 {
+  min-height: 3rem;
 }
 
 .product-actions {
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
+  margin-top: auto;
 }
 
 .price-hint {
