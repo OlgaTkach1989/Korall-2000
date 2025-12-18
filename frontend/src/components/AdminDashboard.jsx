@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useMemo, useState } from "react";
 
 const statusLabels = {
   new: "Neu",
@@ -24,6 +24,16 @@ const AdminDashboard = ({
 }) => {
   const [draftProducts, setDraftProducts] = useState(products);
   const [activeTab, setActiveTab] = useState("Dashboard");
+
+  const orderTotal = (order) =>
+    order.items?.reduce((sum, item) => sum + item.quantity * item.unit_price, 0) || 0;
+
+  const metrics = useMemo(() => {
+    const newOrders = orders.filter((o) => o.status === "new").length;
+    const openOrders = orders.filter((o) => o.status !== "completed").length;
+    const revenueToday = orders.reduce((sum, o) => sum + orderTotal(o), 0);
+    return { newOrders, openOrders, revenueToday };
+  }, [orders]);
 
   const handleProductChange = (id, key, value) => {
     const next = draftProducts.map((product) =>
@@ -54,9 +64,9 @@ const AdminDashboard = ({
       <section>
         {activeTab === "Dashboard" && (
           <div className="admin-metrics">
-            <article>Neue Bestellungen: {orders.filter((o) => o.status === "new").length}</article>
-            <article>Offene Bestellungen: {orders.filter((o) => o.status !== "completed").length}</article>
-            <article>Umsatz heute: 240 €</article>
+            <article>Neue Bestellungen: {metrics.newOrders}</article>
+            <article>Offene Bestellungen: {metrics.openOrders}</article>
+            <article>Umsatz heute: {metrics.revenueToday.toFixed(2)} EUR</article>
           </div>
         )}
 
@@ -95,12 +105,7 @@ const AdminDashboard = ({
                         ))}
                       </select>
                     </td>
-                    <td>
-                      {order.items
-                        ?.reduce((sum, item) => sum + item.quantity * item.unit_price, 0)
-                        .toFixed(2)}{" "}
-                      €
-                    </td>
+                    <td>{orderTotal(order).toFixed(2)} EUR</td>
                     <td>
                       {order.status === "completed" ? (
                         <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
@@ -212,7 +217,7 @@ const AdminDashboard = ({
 
         {["Einstellungen", "Abmelden"].includes(activeTab) && (
           <div className="admin-placeholder">
-            Inhalte für „{activeTab}“ können hier ergänzt werden.
+            Inhalte fuer "{activeTab}" koennen hier ergaenzt werden.
           </div>
         )}
       </section>
