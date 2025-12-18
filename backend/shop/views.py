@@ -27,11 +27,21 @@ class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
 
     def get_permissions(self):
-        if self.action in ["partial_update", "update", "destroy"]:
+        if self.action in ["partial_update", "update"]:
             return [permissions.IsAdminUser()]
         if self.action == "list":
             return [permissions.AllowAny()]
         return [permissions.AllowAny()]
+
+    def destroy(self, request, *args, **kwargs):
+        order = self.get_object()
+        # Разрешаем удалять только завершённые заказы, чтобы не сносить активные
+        if order.status != Order.OrderStatus.COMPLETED:
+            return Response(
+                {"detail": "Nur abgeschlossene Bestellungen können gelöscht werden."},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+        return super().destroy(request, *args, **kwargs)
 
     @action(detail=True, methods=["post"], permission_classes=[permissions.IsAdminUser])
     def update_status(self, request, pk=None):

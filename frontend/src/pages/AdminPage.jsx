@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchOrders, fetchProducts, updateOrderStatus } from "../api/shop";
+import { deleteOrder, fetchOrders, fetchProducts, updateOrderStatus } from "../api/shop";
 import AdminDashboard from "../components/AdminDashboard";
 import { sampleProducts } from "../data/sampleProducts";
 
@@ -34,6 +34,15 @@ const AdminPage = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await deleteOrder(id);
+      setOrders((prev) => prev.filter((order) => order.id !== id));
+    } catch (err) {
+      // ignore demo errors
+    }
+  };
+
   if (!isAuthenticated) {
     return (
       <section className="admin-login">
@@ -63,6 +72,7 @@ const AdminPage = () => {
       products={products}
       onStatusChange={handleStatusChange}
       onProductChange={setProducts}
+      onDeleteOrder={handleDelete}
       onLogout={() => setIsAuthenticated(false)}
     />
   );

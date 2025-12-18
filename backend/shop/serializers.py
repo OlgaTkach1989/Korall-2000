@@ -28,11 +28,13 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
+    username = serializers.CharField(required=False, allow_blank=True)
+    email = serializers.EmailField(required=False, allow_blank=True)
     password = serializers.CharField(write_only=True)
 
     def validate(self, attrs):
-        user = authenticate(username=attrs["username"], password=attrs["password"])
+        username = attrs.get("username") or attrs.get("email")
+        user = authenticate(username=username, password=attrs["password"])
         if not user:
             raise serializers.ValidationError("Ungültige Zugangsdaten.")
         attrs["user"] = user
@@ -107,7 +109,34 @@ class OrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         items_data = validated_data.pop("items", [])
         user = self.context.get("request").user
-        order = Order.objects.create(customer=user if user.is_authenticated else None, **validated_data)
+        # Attach customer: if authenticated, use that user; otherwise try to map by contact_email
+        if user and user.is_authenticated:
+            customer = user
+        else:
+            email = validated_data.get("contact_email")
+            customer = None
+            if email:
+                existing = User.objects.filter(email__iexact=email).first() or User.objects.filter(
+                    username__iexact=email
+                ).first()
+                if existing:
+                    customer = existing
+                else:
+                    username = email
+                    # Если такой username занят, добавим суффикс
+                    counter = 1
+                    base_username = username
+                    while User.objects.filter(username=username).exists():
+                        counter += 1
+                        username = f"{base_username}-{counter}"
+                    customer = User.objects.create_user(
+                        username=username,
+                        email=email,
+                        password=User.objects.make_random_password(),
+                        first_name=validated_data.get("first_name", ""),
+                        last_name=validated_data.get("last_name", ""),
+                    )
+        order = Order.objects.create(customer=customer, **validated_data)
         for item_data in items_data:
             OrderItem.objects.create(order=order, **item_data)
         return order

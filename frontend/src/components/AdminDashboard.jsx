@@ -19,6 +19,7 @@ const AdminDashboard = ({
   products = [],
   onStatusChange,
   onProductChange,
+  onDeleteOrder,
   onLogout,
 }) => {
   const [draftProducts, setDraftProducts] = useState(products);
@@ -70,6 +71,7 @@ const AdminDashboard = ({
                   <th>Datum</th>
                   <th>Status</th>
                   <th>Gesamt</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -98,6 +100,13 @@ const AdminDashboard = ({
                         ?.reduce((sum, item) => sum + item.quantity * item.unit_price, 0)
                         .toFixed(2)}{" "}
                       €
+                    </td>
+                    <td>
+                      {order.status === "completed" ? (
+                        <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
+                          Löschen
+                        </button>
+                      ) : null}
                     </td>
                   </tr>
                 ))}
@@ -158,6 +167,7 @@ const AdminDashboard = ({
                   <th>Lieferart</th>
                   <th>Adresse / Abholung</th>
                   <th>Status</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -185,6 +195,13 @@ const AdminDashboard = ({
                           </option>
                         ))}
                       </select>
+                    </td>
+                    <td>
+                      {order.status === "completed" ? (
+                        <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
+                          Löschen
+                        </button>
+                      ) : null}
                     </td>
                   </tr>
                 ))}

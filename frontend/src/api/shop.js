@@ -27,6 +27,11 @@ export const updateOrderStatus = async (id, status) => {
   return data;
 };
 
+export const deleteOrder = async (id) => {
+  const { data } = await client.delete(`orders/${id}/`);
+  return data;
+};
+
 export const login = async (payload) => {
   const { data } = await client.post("auth/login/", payload);
   return data;
