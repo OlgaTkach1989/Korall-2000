@@ -1,4 +1,5 @@
-from django.contrib.auth import authenticate, get_user_model
+﻿from django.contrib.auth import authenticate, get_user_model
+from django.utils.crypto import get_random_string
 from rest_framework import serializers
 
 from .models import Order, OrderItem, Product
@@ -36,7 +37,7 @@ class LoginSerializer(serializers.Serializer):
         username = attrs.get("username") or attrs.get("email")
         user = authenticate(username=username, password=attrs["password"])
         if not user:
-            raise serializers.ValidationError("Ungültige Zugangsdaten.")
+            raise serializers.ValidationError("UngÃ¼ltige Zugangsdaten.")
         attrs["user"] = user
         return attrs
 
@@ -123,7 +124,7 @@ class OrderSerializer(serializers.ModelSerializer):
                     customer = existing
                 else:
                     username = email
-                    # Если такой username занят, добавим суффикс
+                    # Ð•ÑÐ»Ð¸ Ñ‚Ð°ÐºÐ¾Ð¹ username Ð·Ð°Ð½ÑÑ‚, Ð´Ð¾Ð±Ð°Ð²Ð¸Ð¼ ÑÑƒÑ„Ñ„Ð¸ÐºÑ
                     counter = 1
                     base_username = username
                     while User.objects.filter(username=username).exists():
@@ -132,7 +133,7 @@ class OrderSerializer(serializers.ModelSerializer):
                     customer = User.objects.create_user(
                         username=username,
                         email=email,
-                        password=User.objects.make_random_password(),
+                        password=get_random_string(12),
                         first_name=validated_data.get("first_name", ""),
                         last_name=validated_data.get("last_name", ""),
                     )
@@ -140,3 +141,4 @@ class OrderSerializer(serializers.ModelSerializer):
         for item_data in items_data:
             OrderItem.objects.create(order=order, **item_data)
         return order
+
