@@ -37,7 +37,7 @@ class LoginSerializer(serializers.Serializer):
         username = attrs.get("username") or attrs.get("email")
         user = authenticate(username=username, password=attrs["password"])
         if not user:
-            raise serializers.ValidationError("UngÃ¼ltige Zugangsdaten.")
+            raise serializers.ValidationError("Ungültige Zugangsdaten.")
         attrs["user"] = user
         return attrs
 
@@ -110,35 +110,8 @@ class OrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         items_data = validated_data.pop("items", [])
         user = self.context.get("request").user
-        # Attach customer: if authenticated, use that user; otherwise try to map by contact_email
-        if user and user.is_authenticated:
-            customer = user
-        else:
-            email = validated_data.get("contact_email")
-            customer = None
-            if email:
-                existing = User.objects.filter(email__iexact=email).first() or User.objects.filter(
-                    username__iexact=email
-                ).first()
-                if existing:
-                    customer = existing
-                else:
-                    username = email
-                    # Ð•ÑÐ»Ð¸ Ñ‚Ð°ÐºÐ¾Ð¹ username Ð·Ð°Ð½ÑÑ‚, Ð´Ð¾Ð±Ð°Ð²Ð¸Ð¼ ÑÑƒÑ„Ñ„Ð¸ÐºÑ
-                    counter = 1
-                    base_username = username
-                    while User.objects.filter(username=username).exists():
-                        counter += 1
-                        username = f"{base_username}-{counter}"
-                    customer = User.objects.create_user(
-                        username=username,
-                        email=email,
-                        password=get_random_string(12),
-                        first_name=validated_data.get("first_name", ""),
-                        last_name=validated_data.get("last_name", ""),
-                    )
+        customer = user if user and user.is_authenticated else None
         order = Order.objects.create(customer=customer, **validated_data)
         for item_data in items_data:
             OrderItem.objects.create(order=order, **item_data)
         return order
-
