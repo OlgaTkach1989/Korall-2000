@@ -35,7 +35,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         order = self.get_object()
-        # Разрешаем удалять только завершённые заказы, чтобы не сносить активные
+        
         if order.status != Order.OrderStatus.COMPLETED:
             return Response(
                 {"detail": "Nur abgeschlossene Bestellungen können gelöscht werden."},
@@ -70,6 +70,14 @@ def login_view(request):
     serializer = LoginSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.validated_data["user"]
+    allowed = {"helen.haveloh@techstarter.de", "olgakalinicenko378@gmail.com"}
+    username_lower = (user.username or "").lower()
+    email_lower = (user.email or "").lower()
+    if not (user.is_staff or user.is_superuser) or (
+        username_lower not in {a.lower() for a in allowed}
+        and email_lower not in {a.lower() for a in allowed}
+    ):
+        return Response({"detail": "Kein Zugriff. Nur freigegebene Manager."}, status=status.HTTP_403_FORBIDDEN)
     if not isinstance(request.user, AnonymousUser):
         login(request, user)
     return Response(UserSerializer(user).data)

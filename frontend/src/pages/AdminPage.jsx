@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { deleteOrder, fetchOrders, fetchProducts, updateOrderStatus } from "../api/shop";
+import { deleteOrder, fetchOrders, fetchProducts, login, updateOrderStatus } from "../api/shop";
 import AdminDashboard from "../components/AdminDashboard";
 import { sampleProducts } from "../data/sampleProducts";
 
@@ -7,19 +7,36 @@ const AdminPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState(sampleProducts);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchProducts()
       .then(setProducts)
       .catch(() => {});
-    fetchOrders()
-      .then(setOrders)
-      .catch(() => {});
-  }, []);
+    if (isAuthenticated) {
+      fetchOrders()
+        .then(setOrders)
+        .catch(() => {});
+    }
+  }, [isAuthenticated]);
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    setIsAuthenticated(true);
+    setError("");
+    setLoading(true);
+    const formData = new FormData(event.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    try {
+      await login({ email, username: email, password });
+      setIsAuthenticated(true);
+      localStorage.setItem("isAuthenticated", "true");
+    } catch (err) {
+      setError("Kein Zugriff. Nur freigegebene Manager/Superuser.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleStatusChange = async (id, status) => {
@@ -51,14 +68,15 @@ const AdminPage = () => {
           <form onSubmit={handleLogin}>
             <label>
               Email
-              <input type="email" required />
+              <input type="email" name="email" required />
             </label>
             <label>
               Passwort
-              <input type="password" required />
+              <input type="password" name="password" required />
             </label>
+            {error ? <p className="error">{error}</p> : null}
             <button className="primary" type="submit">
-              Login
+              {loading ? "Login..." : "Login"}
             </button>
           </form>
         </div>
