@@ -34,15 +34,18 @@ export const CartProvider = ({ children }) => {
   const clear = () => setItems([]);
 
   const summary = useMemo(() => {
+    const FREE_SHIPPING_THRESHOLD = 100;
     const subtotal = items.reduce(
       (acc, entry) => acc + entry.product.price * entry.quantity,
       0,
     );
-    const shipping = items.length ? 4 : 0;
+    const shipping =
+      subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : items.length ? 4 : 0;
     return {
       subtotal,
       shipping,
       total: subtotal + shipping,
+      freeShippingThreshold: FREE_SHIPPING_THRESHOLD,
     };
   }, [items]);
 

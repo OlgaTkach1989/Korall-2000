@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const fallbackImage =
   "https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=900&q=60";
 
 const ProductDetail = ({ product, onAdd }) => {
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
 
   if (!product) return null;
@@ -22,7 +24,13 @@ const ProductDetail = ({ product, onAdd }) => {
         <img src={image} alt={product.name} />
       </div>
       <div className="product-detail__info">
-        <p className="back-link">← Zurück zu Produkten</p>
+        <button
+          type="button"
+          className="back-link"
+          onClick={() => navigate("/products")}
+        >
+          ← Zurück zu Produkten
+        </button>
         <h2>{product.name}</h2>
         <p className="price-hint">ab {price.toFixed(2)} € / Stück</p>
         <p>{product.description}</p>

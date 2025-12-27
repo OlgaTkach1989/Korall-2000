@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchProduct, fetchProducts } from "../api/shop";
 import ProductCard from "../components/ProductCard";
 import ProductDetail from "../components/ProductDetail";
@@ -8,6 +8,7 @@ import { sampleProducts } from "../data/sampleProducts";
 
 const ProductsPage = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [products, setProducts] = useState(sampleProducts);
   const [selected, setSelected] = useState(null);
   const { addItem } = useCart();
@@ -31,6 +32,13 @@ const ProductsPage = () => {
       });
   }, [slug]);
 
+  const handleSelect = (product) => {
+    setSelected(product);
+    if (product?.slug) {
+      navigate(`/products/${product.slug}`);
+    }
+  };
+
   return (
     <section className="product-page">
       {!slug ? (
@@ -41,7 +49,7 @@ const ProductsPage = () => {
               <ProductCard
                 key={product.slug}
                 product={product}
-                onSelect={setSelected}
+                onSelect={handleSelect}
                 onAdd={addItem}
               />
             ))}

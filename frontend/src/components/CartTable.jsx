@@ -2,6 +2,10 @@ import { useCart } from "../context/CartContext";
 
 const CartTable = ({ onCheckout }) => {
   const { items, updateQuantity, removeItem, summary } = useCart();
+  const remaining =
+    summary.freeShippingThreshold != null
+      ? Math.max(0, summary.freeShippingThreshold - summary.subtotal)
+      : 0;
 
   return (
     <section className="cart">
@@ -38,7 +42,7 @@ const CartTable = ({ onCheckout }) => {
                   <td>{(entry.product.price * entry.quantity).toFixed(2)} €</td>
                   <td>
                     <button className="ghost" onClick={() => removeItem(entry.product.id)}>
-                      ✕
+                      x
                     </button>
                   </td>
                 </tr>
@@ -49,7 +53,15 @@ const CartTable = ({ onCheckout }) => {
       </div>
       <aside className="cart-summary">
         <p>Zwischensumme: {summary.subtotal.toFixed(2)} €</p>
-        <p>Versand: {summary.shipping.toFixed(2)} €</p>
+        <p>
+          Versand: {summary.shipping.toFixed(2)} €
+          {summary.shipping === 0 && " (kostenlos ab 100 €)"}
+        </p>
+        {remaining > 0 && (
+          <p className="muted">
+            Noch {remaining.toFixed(2)} € bis kostenloser Versand
+          </p>
+        )}
         <p className="total">Gesamt: {summary.total.toFixed(2)} €</p>
         <button className="primary" disabled={!items.length} onClick={onCheckout}>
           Zur Kasse
