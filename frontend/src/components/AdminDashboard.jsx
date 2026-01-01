@@ -29,10 +29,11 @@ const AdminDashboard = ({
     order.items?.reduce((sum, item) => sum + item.quantity * item.unit_price, 0) || 0;
 
   const metrics = useMemo(() => {
-    const newOrders = orders.filter((o) => o.status === "new").length;
-    const openOrders = orders.filter((o) => o.status !== "completed").length;
+    const newOrders = orders.filter((o) => o.status === "new" && !o.is_deleted).length;
+    const openOrders = orders.filter((o) => o.status !== "completed" && !o.is_deleted).length;
+    const deletedOrders = orders.filter((o) => o.is_deleted).length;
     const revenueToday = orders.reduce((sum, o) => sum + orderTotal(o), 0);
-    return { newOrders, openOrders, revenueToday };
+    return { newOrders, openOrders, deletedOrders, revenueToday };
   }, [orders]);
 
   const handleProductChange = (id, key, value) => {
@@ -66,6 +67,7 @@ const AdminDashboard = ({
           <div className="admin-metrics">
             <article>Neue Bestellungen: {metrics.newOrders}</article>
             <article>Offene Bestellungen: {metrics.openOrders}</article>
+            <article>Gelöschte Bestellungen: {metrics.deletedOrders}</article>
             <article>Umsatz heute: {metrics.revenueToday.toFixed(2)} EUR</article>
           </div>
         )}
@@ -86,28 +88,32 @@ const AdminDashboard = ({
               </thead>
               <tbody>
                 {orders.map((order) => (
-                  <tr key={order.id}>
+                  <tr key={order.id} className={order.is_deleted ? "is-deleted" : ""}>
                     <td>{order.id.toString().padStart(4, "0")}</td>
                     <td>
                       {order.first_name} {order.last_name}
                     </td>
                     <td>{new Date(order.created_at).toLocaleDateString()}</td>
                     <td>
-                      <select
-                        className={statusPalette[order.status]}
-                        value={order.status}
-                        onChange={(event) => onStatusChange?.(order.id, event.target.value)}
-                      >
-                        {Object.entries(statusLabels).map(([value, label]) => (
-                          <option value={value} key={value}>
-                            {label}
-                          </option>
-                        ))}
-                      </select>
+                      {order.is_deleted ? (
+                        <span className="badge gray">Gelöscht</span>
+                      ) : (
+                        <select
+                          className={statusPalette[order.status]}
+                          value={order.status}
+                          onChange={(event) => onStatusChange?.(order.id, event.target.value)}
+                        >
+                          {Object.entries(statusLabels).map(([value, label]) => (
+                            <option value={value} key={value}>
+                              {label}
+                            </option>
+                          ))}
+                        </select>
+                      )}
                     </td>
                     <td>{orderTotal(order).toFixed(2)} EUR</td>
                     <td>
-                      {order.status === "completed" ? (
+                      {order.status === "completed" && !order.is_deleted ? (
                         <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
                           Löschen
                         </button>
@@ -177,7 +183,7 @@ const AdminDashboard = ({
               </thead>
               <tbody>
                 {orders.map((order) => (
-                  <tr key={order.id}>
+                  <tr key={order.id} className={order.is_deleted ? "is-deleted" : ""}>
                     <td>{order.id.toString().padStart(4, "0")}</td>
                     <td>
                       {order.first_name} {order.last_name}
@@ -189,20 +195,24 @@ const AdminDashboard = ({
                         : `${order.street} ${order.house_number}, ${order.postal_code} ${order.city}`}
                     </td>
                     <td>
-                      <select
-                        className={statusPalette[order.status]}
-                        value={order.status}
-                        onChange={(event) => onStatusChange?.(order.id, event.target.value)}
-                      >
-                        {Object.entries(statusLabels).map(([value, label]) => (
-                          <option value={value} key={value}>
-                            {label}
-                          </option>
-                        ))}
-                      </select>
+                      {order.is_deleted ? (
+                        <span className="badge gray">Gelöscht</span>
+                      ) : (
+                        <select
+                          className={statusPalette[order.status]}
+                          value={order.status}
+                          onChange={(event) => onStatusChange?.(order.id, event.target.value)}
+                        >
+                          {Object.entries(statusLabels).map(([value, label]) => (
+                            <option value={value} key={value}>
+                              {label}
+                            </option>
+                          ))}
+                        </select>
+                      )}
                     </td>
                     <td>
-                      {order.status === "completed" ? (
+                      {order.status === "completed" && !order.is_deleted ? (
                         <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
                           Löschen
                         </button>

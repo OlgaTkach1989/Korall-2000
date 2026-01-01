@@ -91,6 +91,7 @@ class OrderSerializer(serializers.ModelSerializer):
             "id",
             "contact_email",
             "status",
+            "is_deleted",
             "delivery_type",
             "first_name",
             "last_name",

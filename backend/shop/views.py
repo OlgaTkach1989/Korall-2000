@@ -41,7 +41,9 @@ class OrderViewSet(viewsets.ModelViewSet):
                 {"detail": "Nur abgeschlossene Bestellungen können gelöscht werden."},
                 status=status.HTTP_403_FORBIDDEN,
             )
-        return super().destroy(request, *args, **kwargs)
+        order.is_deleted = True
+        order.save(update_fields=["is_deleted"])
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
     @action(detail=True, methods=["post"], permission_classes=[permissions.IsAdminUser])
     def update_status(self, request, pk=None):

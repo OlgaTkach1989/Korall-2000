@@ -54,7 +54,9 @@ const AdminPage = () => {
   const handleDelete = async (id) => {
     try {
       await deleteOrder(id);
-      setOrders((prev) => prev.filter((order) => order.id !== id));
+      setOrders((prev) =>
+        prev.map((order) => (order.id === id ? { ...order, is_deleted: true } : order)),
+      );
     } catch (err) {
       // ignore demo errors
     }

@@ -511,6 +511,15 @@ main {
   color: #0d9f58;
 }
 
+.badge.gray {
+  background: #eceff5;
+  color: #4a4a4a;
+}
+
+.admin-orders tr.is-deleted {
+  opacity: 0.6;
+}
+
 .product-editor {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
