@@ -72,7 +72,9 @@ def login_view(request):
     serializer = LoginSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.validated_data["user"]
-    allowed = {"helen.haveloh@techstarter.de", "olgakalinicenko378@gmail.com"}
+    allowed = {
+        "olga.tkachuk@tn.techstarter.de",
+    }
     username_lower = (user.username or "").lower()
     email_lower = (user.email or "").lower()
     if not (user.is_staff or user.is_superuser) or (

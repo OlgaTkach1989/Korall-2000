@@ -1,8 +1,8 @@
 ﻿from django.contrib.auth import authenticate, get_user_model
-from django.utils.crypto import get_random_string
 from rest_framework import serializers
 
 from .models import Order, OrderItem, Product
+from .email import send_order_email
 
 User = get_user_model()
 
@@ -115,4 +115,8 @@ class OrderSerializer(serializers.ModelSerializer):
         order = Order.objects.create(customer=customer, **validated_data)
         for item_data in items_data:
             OrderItem.objects.create(order=order, **item_data)
+        try:
+            send_order_email(order)
+        except Exception:
+            pass
         return order

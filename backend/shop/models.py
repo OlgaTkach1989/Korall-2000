@@ -62,6 +62,9 @@ class Order(TimeStampedModel):
         max_length=20, choices=OrderStatus.choices, default=OrderStatus.NEW
     )
     is_deleted = models.BooleanField(default=False)
+    last_email_status = models.CharField(max_length=20, default="pending")
+    last_email_error = models.TextField(blank=True)
+    last_email_attempt_at = models.DateTimeField(null=True, blank=True)
     notes = models.TextField(blank=True)
 
     class Meta:
