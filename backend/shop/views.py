@@ -42,7 +42,9 @@ class OrderViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_403_FORBIDDEN,
             )
         order.is_deleted = True
-        order.save(update_fields=["is_deleted"])
+        if order.status != Order.OrderStatus.COMPLETED:
+            order.status = Order.OrderStatus.COMPLETED
+        order.save(update_fields=["is_deleted", "status"])
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     @action(detail=True, methods=["post"], permission_classes=[permissions.IsAdminUser])
@@ -82,8 +84,7 @@ def login_view(request):
         and email_lower not in {a.lower() for a in allowed}
     ):
         return Response({"detail": "Kein Zugriff. Nur freigegebene Manager."}, status=status.HTTP_403_FORBIDDEN)
-    if not isinstance(request.user, AnonymousUser):
-        login(request, user)
+    login(request, user)
     return Response(UserSerializer(user).data)
 
 

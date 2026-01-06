@@ -20,7 +20,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "contact_email",
-        "status",
+        "status_display",
         "delivery_type",
         "created_at",
         "last_email_status",
@@ -29,3 +29,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ("status", "delivery_type", "last_email_status")
     search_fields = ("contact_email", "first_name", "last_name")
     inlines = [OrderItemInline]
+
+    def status_display(self, obj):
+        if obj.is_deleted:
+            return "Gelöscht"
+        return obj.get_status_display()
+
+    status_display.short_description = "Status"
