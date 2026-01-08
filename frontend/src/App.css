@@ -53,6 +53,25 @@
   gap: 1.5rem;
 }
 
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #0c1b33;
+  margin: 5px 0;
+  border-radius: 999px;
+}
+
 .nav-link {
   text-decoration: none;
   color: #0c1b33;
@@ -577,5 +596,94 @@ main {
   .top-nav {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 0 5vw 3rem;
+  }
+
+  .top-nav nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 0 0.5rem;
+  }
+
+  .top-nav nav.open {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.25rem 1.75rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail__image {
+    height: 320px;
+  }
+
+  .cart-table table,
+  .admin-orders table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .admin-shell aside {
+    position: static;
+    width: 100%;
+  }
+
+  .admin-shell aside ul {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.75rem;
+    background: #00b0b9;
+    border-radius: 18px;
+  }
+
+  .admin-shell aside li {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 1rem 6vw;
+  }
+
+  .hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .product-body {
+    padding: 1.25rem;
+  }
+
+  .cart-summary,
+  .checkout .cart-summary {
+    padding: 1.25rem;
   }
 }

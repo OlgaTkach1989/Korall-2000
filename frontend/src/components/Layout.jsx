@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
@@ -10,6 +11,7 @@ const navItems = [
 
 const Layout = ({ children }) => {
   const { items } = useCart();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="app-shell">
@@ -17,7 +19,18 @@ const Layout = ({ children }) => {
         <Link to="/" className="logo">
           Korall 2000
         </Link>
-        <nav>
+        <button
+          type="button"
+          className="burger"
+          aria-label="Menü öffnen"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav className={menuOpen ? "open" : ""}>
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -25,6 +38,7 @@ const Layout = ({ children }) => {
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
               {item.to === "/cart" && items.length > 0 ? (
