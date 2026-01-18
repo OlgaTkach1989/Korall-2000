@@ -1,11 +1,5 @@
-﻿import { useMemo, useState } from "react";
-
-const statusLabels = {
-  new: "Neu",
-  processing: "In Bearbeitung",
-  shipped: "Versandt",
-  completed: "Abgeschlossen",
-};
+import { useMemo, useState } from "react";
+import { useI18n } from "../context/I18nContext";
 
 const statusPalette = {
   new: "badge yellow",
@@ -22,8 +16,9 @@ const AdminDashboard = ({
   onDeleteOrder,
   onLogout,
 }) => {
+  const { t } = useI18n();
   const [draftProducts, setDraftProducts] = useState(products);
-  const [activeTab, setActiveTab] = useState("Dashboard");
+  const [activeTab, setActiveTab] = useState("dashboard");
 
   const orderTotal = (order) =>
     order.items?.reduce((sum, item) => sum + item.quantity * item.unit_price, 0) || 0;
@@ -35,6 +30,21 @@ const AdminDashboard = ({
     const revenueToday = orders.reduce((sum, o) => sum + orderTotal(o), 0);
     return { newOrders, openOrders, deletedOrders, revenueToday };
   }, [orders]);
+
+  const statusLabels = {
+    new: t("status.new"),
+    processing: t("status.processing"),
+    shipped: t("status.shipped"),
+    completed: t("status.completed"),
+  };
+
+  const tabs = [
+    { key: "dashboard", label: t("admin.dashboard") },
+    { key: "products", label: t("admin.products") },
+    { key: "orders", label: t("admin.orders") },
+    { key: "logistics", label: t("admin.logistics") },
+    { key: "settings", label: t("admin.settings") },
+  ];
 
   const handleProductChange = (id, key, value) => {
     const next = draftProducts.map((product) =>
@@ -48,41 +58,49 @@ const AdminDashboard = ({
     <div className="admin-shell">
       <aside>
         <ul>
-          {["Dashboard", "Produkte", "Bestellungen", "Logistik", "Einstellungen"].map((item) => (
+          {tabs.map((item) => (
             <li
-              key={item}
-              className={item === activeTab ? "active" : ""}
-              onClick={() => setActiveTab(item)}
+              key={item.key}
+              className={item.key === activeTab ? "active" : ""}
+              onClick={() => setActiveTab(item.key)}
             >
-              {item}
+              {item.label}
             </li>
           ))}
           <li className="logout" onClick={onLogout}>
-            Abmelden
+            {t("admin.logout")}
           </li>
         </ul>
       </aside>
       <section>
-        {activeTab === "Dashboard" && (
+        {activeTab === "dashboard" && (
           <div className="admin-metrics">
-            <article>Neue Bestellungen: {metrics.newOrders}</article>
-            <article>Offene Bestellungen: {metrics.openOrders}</article>
-            <article>Gelöschte Bestellungen: {metrics.deletedOrders}</article>
-            <article>Umsatz heute: {metrics.revenueToday.toFixed(2)} EUR</article>
+            <article>
+              {t("admin.newOrders")}: {metrics.newOrders}
+            </article>
+            <article>
+              {t("admin.openOrders")}: {metrics.openOrders}
+            </article>
+            <article>
+              {t("admin.deletedOrders")}: {metrics.deletedOrders}
+            </article>
+            <article>
+              {t("admin.revenueToday")}: {metrics.revenueToday.toFixed(2)} EUR
+            </article>
           </div>
         )}
 
-        {activeTab === "Bestellungen" && (
+        {activeTab === "orders" && (
           <div className="admin-orders">
-            <h3>Bestellungen</h3>
+            <h3>{t("admin.orders")}</h3>
             <table>
               <thead>
                 <tr>
-                  <th>Nr</th>
-                  <th>Kunde</th>
-                  <th>Datum</th>
-                  <th>Status</th>
-                  <th>Gesamt</th>
+                  <th>{t("admin.number")}</th>
+                  <th>{t("admin.customer")}</th>
+                  <th>{t("admin.date")}</th>
+                  <th>{t("admin.status")}</th>
+                  <th>{t("admin.total")}</th>
                   <th></th>
                 </tr>
               </thead>
@@ -96,7 +114,7 @@ const AdminDashboard = ({
                     <td>{new Date(order.created_at).toLocaleDateString()}</td>
                     <td>
                       {order.is_deleted ? (
-                        <span className="badge gray">Gelöscht</span>
+                        <span className="badge gray">{t("admin.deleted")}</span>
                       ) : (
                         <select
                           className={statusPalette[order.status]}
@@ -115,7 +133,7 @@ const AdminDashboard = ({
                     <td>
                       {order.status === "completed" && !order.is_deleted ? (
                         <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
-                          Löschen
+                          {t("admin.delete")}
                         </button>
                       ) : null}
                     </td>
@@ -126,15 +144,15 @@ const AdminDashboard = ({
           </div>
         )}
 
-        {activeTab === "Produkte" && (
+        {activeTab === "products" && (
           <div className="admin-products">
-            <h3>Produkte verwalten</h3>
+            <h3>{t("admin.manageProducts")}</h3>
             <div className="product-editor">
               {draftProducts.map((product) => (
                 <article key={product.id}>
                   <h4>{product.name}</h4>
                   <label>
-                    Preis
+                    {t("admin.productLabel")}
                     <input
                       type="number"
                       step="0.01"
@@ -145,7 +163,7 @@ const AdminDashboard = ({
                     />
                   </label>
                   <label>
-                    Mindestpreis
+                    {t("admin.minPriceLabel")}
                     <input
                       type="number"
                       step="0.01"
@@ -167,17 +185,17 @@ const AdminDashboard = ({
           </div>
         )}
 
-        {activeTab === "Logistik" && (
+        {activeTab === "logistics" && (
           <div className="admin-orders">
-            <h3>Lieferungen / Logistik</h3>
+            <h3>{t("admin.deliveries")}</h3>
             <table>
               <thead>
                 <tr>
-                  <th>Nr</th>
-                  <th>Kunde</th>
-                  <th>Lieferart</th>
-                  <th>Adresse / Abholung</th>
-                  <th>Status</th>
+                  <th>{t("admin.number")}</th>
+                  <th>{t("admin.customer")}</th>
+                  <th>{t("admin.deliveryType")}</th>
+                  <th>{t("admin.addressPickup")}</th>
+                  <th>{t("admin.status")}</th>
                   <th></th>
                 </tr>
               </thead>
@@ -188,15 +206,19 @@ const AdminDashboard = ({
                     <td>
                       {order.first_name} {order.last_name}
                     </td>
-                    <td>{order.delivery_type === "pickup" ? "Abholung" : "Lieferung"}</td>
                     <td>
                       {order.delivery_type === "pickup"
-                        ? "Abholung vor Ort"
+                        ? t("checkout.pickup")
+                        : t("checkout.delivery")}
+                    </td>
+                    <td>
+                      {order.delivery_type === "pickup"
+                        ? t("admin.addressPickupValue")
                         : `${order.street} ${order.house_number}, ${order.postal_code} ${order.city}`}
                     </td>
                     <td>
                       {order.is_deleted ? (
-                        <span className="badge gray">Gelöscht</span>
+                        <span className="badge gray">{t("admin.deleted")}</span>
                       ) : (
                         <select
                           className={statusPalette[order.status]}
@@ -214,7 +236,7 @@ const AdminDashboard = ({
                     <td>
                       {order.status === "completed" && !order.is_deleted ? (
                         <button className="ghost danger" onClick={() => onDeleteOrder?.(order.id)}>
-                          Löschen
+                          {t("admin.delete")}
                         </button>
                       ) : null}
                     </td>
@@ -225,9 +247,9 @@ const AdminDashboard = ({
           </div>
         )}
 
-        {["Einstellungen", "Abmelden"].includes(activeTab) && (
+        {activeTab === "settings" && (
           <div className="admin-placeholder">
-            Inhalte fuer "{activeTab}" koennen hier ergaenzt werden.
+            {t("admin.placeholder", { tab: t("admin.settings") })}
           </div>
         )}
       </section>

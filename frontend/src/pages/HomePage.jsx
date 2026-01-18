@@ -3,22 +3,52 @@ import { useNavigate } from "react-router-dom";
 import { fetchHomepageFeatures } from "../api/shop";
 import FeatureGrid from "../components/FeatureGrid";
 import HeroSection from "../components/HeroSection";
+import { useI18n } from "../context/I18nContext";
 
 const HomePage = () => {
   const [features, setFeatures] = useState([]);
   const navigate = useNavigate();
+  const { t, language } = useI18n();
 
   useEffect(() => {
     fetchHomepageFeatures()
-      .then((response) => setFeatures(response.features))
+      .then((response) => {
+        if (language === "en") {
+          setFeatures([
+            {
+              title: t("features.fast.title"),
+              description: t("features.fast.description"),
+            },
+            {
+              title: t("features.sizes.title"),
+              description: t("features.sizes.description"),
+            },
+            {
+              title: t("features.prices.title"),
+              description: t("features.prices.description"),
+            },
+          ]);
+          return;
+        }
+        setFeatures(response.features);
+      })
       .catch(() =>
         setFeatures([
-          { title: "Schnelle Produktion", description: "Lieferung innerhalb weniger Tage." },
-          { title: "Individuelle Größen", description: "Produktion passend zu Ihrem Bedarf." },
-          { title: "Faire Preise", description: "Direkt vom Hersteller." },
+          {
+            title: t("features.fast.title"),
+            description: t("features.fast.description"),
+          },
+          {
+            title: t("features.sizes.title"),
+            description: t("features.sizes.description"),
+          },
+          {
+            title: t("features.prices.title"),
+            description: t("features.prices.description"),
+          },
         ]),
       );
-  }, []);
+  }, [language, t]);
 
   return (
     <>

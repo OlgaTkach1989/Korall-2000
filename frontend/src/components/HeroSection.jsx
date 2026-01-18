@@ -1,15 +1,19 @@
 import heroImage from "../assets/HomeSeite.jpg";
+import { useI18n } from "../context/I18nContext";
 
-const HeroSection = ({ onCTAClick }) => (
-  <section className="hero" style={{ "--hero-image": `url(${heroImage})` }}>
-    <div>
-      <p className="hero-eyebrow">Korall 2000 – Plastiktüten & Verpackungen</p>
-      <h1>Hochwertige Verpackungslösungen direkt vom Hersteller.</h1>
-      <button className="primary" onClick={onCTAClick}>
-        Produkte ansehen
-      </button>
-    </div>
-  </section>
-);
+const HeroSection = ({ onCTAClick }) => {
+  const { t } = useI18n();
+  return (
+    <section className="hero" style={{ "--hero-image": `url(${heroImage})` }}>
+      <div>
+        <p className="hero-eyebrow">{t("hero.eyebrow")}</p>
+        <h1>{t("hero.title")}</h1>
+        <button className="primary" onClick={onCTAClick}>
+          {t("hero.cta")}
+        </button>
+      </div>
+    </section>
+  );
+};
 
 export default HeroSection;

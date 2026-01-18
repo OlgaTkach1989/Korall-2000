@@ -4,6 +4,7 @@ import { fetchProduct, fetchProducts } from "../api/shop";
 import ProductCard from "../components/ProductCard";
 import ProductDetail from "../components/ProductDetail";
 import { useCart } from "../context/CartContext";
+import { useI18n } from "../context/I18nContext";
 import { sampleProducts } from "../data/sampleProducts";
 
 const ProductsPage = () => {
@@ -12,6 +13,7 @@ const ProductsPage = () => {
   const [products, setProducts] = useState(sampleProducts);
   const [selected, setSelected] = useState(null);
   const { addItem } = useCart();
+  const { t } = useI18n();
 
   useEffect(() => {
     fetchProducts()
@@ -43,7 +45,7 @@ const ProductsPage = () => {
     <section className="product-page">
       {!slug ? (
         <>
-          <h2>Unsere Produkte</h2>
+          <h2>{t("products.title")}</h2>
           <div className="grid">
             {products.map((product) => (
               <ProductCard
@@ -57,7 +59,7 @@ const ProductsPage = () => {
           {selected ? (
             <ProductDetail product={selected} onAdd={addItem} />
           ) : (
-            <p className="muted">Wählen Sie ein Produkt für weitere Details.</p>
+            <p className="muted">{t("products.emptyHint")}</p>
           )}
         </>
       ) : (

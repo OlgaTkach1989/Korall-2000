@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { login, register } from "../api/shop";
+import { useI18n } from "../context/I18nContext";
 
 const AuthPage = () => {
+  const { t } = useI18n();
   const [mode, setMode] = useState("login");
   const [form, setForm] = useState({
     username: "",
@@ -28,14 +30,18 @@ const AuthPage = () => {
           username: form.username,
           password: form.password,
         });
-        setMessage(`Willkommen zurück, ${response.first_name || response.username}!`);
+        setMessage(
+          t("auth.welcome", {
+            name: response.first_name || response.username,
+          }),
+        );
       } else {
         await register(form);
-        setMessage("Registrierung erfolgreich! Sie können sich jetzt anmelden.");
+        setMessage(t("auth.registerSuccess"));
         setMode("login");
       }
     } catch (err) {
-      setError("Aktion fehlgeschlagen. Bitte Eingaben prüfen.");
+      setError(t("auth.actionFailed"));
     }
   };
 
@@ -47,20 +53,20 @@ const AuthPage = () => {
             className={mode === "login" ? "active" : ""}
             onClick={() => setMode("login")}
           >
-            Login
+            {t("auth.login")}
           </button>
           <button
             className={mode === "register" ? "active" : ""}
             onClick={() => setMode("register")}
           >
-            Registrieren
+            {t("auth.register")}
           </button>
         </div>
         <form onSubmit={handleSubmit}>
           {mode === "register" && (
             <>
               <label>
-                Vorname
+                {t("checkout.firstName")}
                 <input
                   name="first_name"
                   value={form.first_name}
@@ -69,7 +75,7 @@ const AuthPage = () => {
                 />
               </label>
               <label>
-                Nachname
+                {t("checkout.lastName")}
                 <input
                   name="last_name"
                   value={form.last_name}
@@ -78,7 +84,7 @@ const AuthPage = () => {
                 />
               </label>
               <label>
-                Email
+                {t("checkout.email")}
                 <input
                   type="email"
                   name="email"
@@ -90,11 +96,11 @@ const AuthPage = () => {
             </>
           )}
           <label>
-            Nutzername
+            {t("auth.username")}
             <input name="username" value={form.username} onChange={handleChange} required />
           </label>
           <label>
-            Passwort
+            {t("auth.password")}
             <input
               type="password"
               name="password"
@@ -106,7 +112,7 @@ const AuthPage = () => {
           {error && <p className="error">{error}</p>}
           {message && <p className="success">{message}</p>}
           <button className="primary" type="submit">
-            {mode === "login" ? "Anmelden" : "Registrieren"}
+            {mode === "login" ? t("auth.login") : t("auth.register")}
           </button>
         </form>
       </div>

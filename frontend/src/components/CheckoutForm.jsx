@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createOrder } from "../api/shop";
 import { useCart } from "../context/CartContext";
+import { useI18n } from "../context/I18nContext";
 
 const initialForm = {
   first_name: "",
@@ -16,6 +17,7 @@ const initialForm = {
 };
 
 const CheckoutForm = () => {
+  const { t } = useI18n();
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -45,7 +47,7 @@ const CheckoutForm = () => {
       clear();
       navigate("/order-success");
     } catch (err) {
-      setError("Bestellung konnte nicht erstellt werden. Bitte erneut versuchen.");
+      setError(t("checkout.error"));
     } finally {
       setLoading(false);
     }
@@ -53,35 +55,35 @@ const CheckoutForm = () => {
 
   return (
     <section className="checkout">
-      <h2>Lieferadresse</h2>
+      <h2>{t("checkout.address")}</h2>
       <form className="checkout-form" onSubmit={handleSubmit}>
         <div className="form-grid">
           <label>
-            Vorname
+            {t("checkout.firstName")}
             <input name="first_name" value={form.first_name} onChange={handleChange} required />
           </label>
           <label>
-            Nachname
+            {t("checkout.lastName")}
             <input name="last_name" value={form.last_name} onChange={handleChange} required />
           </label>
           <label>
-            Straße
+            {t("checkout.street")}
             <input name="street" value={form.street} onChange={handleChange} required />
           </label>
           <label>
-            Hausnummer
+            {t("checkout.houseNumber")}
             <input name="house_number" value={form.house_number} onChange={handleChange} required />
           </label>
           <label>
-            PLZ
+            {t("checkout.postalCode")}
             <input name="postal_code" value={form.postal_code} onChange={handleChange} required />
           </label>
           <label>
-            Stadt
+            {t("checkout.city")}
             <input name="city" value={form.city} onChange={handleChange} required />
           </label>
           <label>
-            Email
+            {t("checkout.email")}
             <input
               type="email"
               name="contact_email"
@@ -92,7 +94,7 @@ const CheckoutForm = () => {
           </label>
         </div>
         <fieldset className="radio-group">
-          <legend>Versandoptionen</legend>
+          <legend>{t("checkout.shippingOptions")}</legend>
           <label>
             <input
               type="radio"
@@ -101,7 +103,7 @@ const CheckoutForm = () => {
               checked={form.delivery_type === "delivery"}
               onChange={handleChange}
             />
-            Lieferung
+            {t("checkout.delivery")}
           </label>
           <label>
             <input
@@ -111,12 +113,12 @@ const CheckoutForm = () => {
               checked={form.delivery_type === "pickup"}
               onChange={handleChange}
             />
-            Abholung vor Ort
+            {t("checkout.pickup")}
           </label>
         </fieldset>
         {error ? <p className="error">{error}</p> : null}
         <button className="primary" type="submit" disabled={loading || !items.length}>
-          {loading ? "Sende Bestellung..." : "Bestellung abschicken"}
+          {loading ? t("checkout.submitting") : t("checkout.submit")}
         </button>
       </form>
     </section>

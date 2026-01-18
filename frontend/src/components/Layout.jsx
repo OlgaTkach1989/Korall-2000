@@ -1,28 +1,48 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-
-const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/products", label: "Produkte" },
-  { to: "/cart", label: "Warenkorb" },
-  { to: "/admin", label: "Admin" },
-];
+import { useI18n } from "../context/I18nContext";
 
 const Layout = ({ children }) => {
   const { items } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useI18n();
+
+  const navItems = [
+    { to: "/", label: t("nav.home") },
+    { to: "/products", label: t("nav.products") },
+    { to: "/cart", label: t("nav.cart") },
+    { to: "/admin", label: t("nav.admin") },
+  ];
 
   return (
     <div className="app-shell">
       <header className="top-nav">
         <Link to="/" className="logo">
-          Korall 2000
+          {t("brand")}
         </Link>
+        <div className="nav-actions">
+          <div className="lang-toggle">
+            <button
+              type="button"
+              className={language === "de" ? "active" : ""}
+              onClick={() => setLanguage("de")}
+            >
+              {t("language.de")}
+            </button>
+            <button
+              type="button"
+              className={language === "en" ? "active" : ""}
+              onClick={() => setLanguage("en")}
+            >
+              {t("language.en")}
+            </button>
+          </div>
+        </div>
         <button
           type="button"
           className="burger"
-          aria-label="Menü öffnen"
+          aria-label={t("nav.menu")}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
         >

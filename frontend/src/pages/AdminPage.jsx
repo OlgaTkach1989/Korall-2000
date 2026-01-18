@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { deleteOrder, fetchOrders, fetchProducts, login, updateOrderStatus } from "../api/shop";
 import AdminDashboard from "../components/AdminDashboard";
 import { sampleProducts } from "../data/sampleProducts";
+import { useI18n } from "../context/I18nContext";
 
 const AdminPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -9,6 +10,7 @@ const AdminPage = () => {
   const [products, setProducts] = useState(sampleProducts);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     fetchProducts()
@@ -33,7 +35,7 @@ const AdminPage = () => {
       setIsAuthenticated(true);
       localStorage.setItem("isAuthenticated", "true");
     } catch (err) {
-      setError("Kein Zugriff. Nur freigegebene Manager/Superuser.");
+      setError(t("admin.loginError"));
     } finally {
       setLoading(false);
     }
@@ -66,19 +68,19 @@ const AdminPage = () => {
     return (
       <section className="admin-login">
         <div className="auth-card">
-          <h2>Admin Login</h2>
+          <h2>{t("admin.loginTitle")}</h2>
           <form onSubmit={handleLogin}>
             <label>
-              Email
+              {t("admin.email")}
               <input type="email" name="email" required />
             </label>
             <label>
-              Passwort
+              {t("admin.password")}
               <input type="password" name="password" required />
             </label>
             {error ? <p className="error">{error}</p> : null}
             <button className="primary" type="submit">
-              {loading ? "Login..." : "Login"}
+              {loading ? t("admin.loginLoading") : t("admin.login")}
             </button>
           </form>
         </div>

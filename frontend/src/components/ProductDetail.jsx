@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useI18n } from "../context/I18nContext";
 
 const fallbackImage =
   "https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=900&q=60";
 
 const ProductDetail = ({ product, onAdd }) => {
   const navigate = useNavigate();
+  const { t } = useI18n();
   const [quantity, setQuantity] = useState(1);
 
   if (!product) return null;
@@ -29,13 +31,15 @@ const ProductDetail = ({ product, onAdd }) => {
           className="back-link"
           onClick={() => navigate("/products")}
         >
-          ← Zurück zu Produkten
+          ← {t("products.backToProducts")}
         </button>
         <h2>{product.name}</h2>
-        <p className="price-hint">ab {price.toFixed(2)} € / Stück</p>
+        <p className="price-hint">
+          {t("products.from")} {price.toFixed(2)} € / {t("products.perPiece")}
+        </p>
         <p>{product.description}</p>
         <label>
-          Menge
+          {t("products.quantity")}
           <input
             type="number"
             min="1"
@@ -44,7 +48,7 @@ const ProductDetail = ({ product, onAdd }) => {
           />
         </label>
         <button className="primary" onClick={handleAdd}>
-          In den Warenkorb
+          {t("products.addToCart")}
         </button>
       </div>
     </section>
