@@ -53,6 +53,8 @@ const CheckoutForm = () => {
     }
   };
 
+  const isDelivery = form.delivery_type === "delivery";
+
   return (
     <section className="checkout">
       <h2>{t("checkout.address")}</h2>
@@ -67,22 +69,6 @@ const CheckoutForm = () => {
             <input name="last_name" value={form.last_name} onChange={handleChange} required />
           </label>
           <label>
-            {t("checkout.street")}
-            <input name="street" value={form.street} onChange={handleChange} required />
-          </label>
-          <label>
-            {t("checkout.houseNumber")}
-            <input name="house_number" value={form.house_number} onChange={handleChange} required />
-          </label>
-          <label>
-            {t("checkout.postalCode")}
-            <input name="postal_code" value={form.postal_code} onChange={handleChange} required />
-          </label>
-          <label>
-            {t("checkout.city")}
-            <input name="city" value={form.city} onChange={handleChange} required />
-          </label>
-          <label>
             {t("checkout.email")}
             <input
               type="email"
@@ -92,6 +78,36 @@ const CheckoutForm = () => {
               required
             />
           </label>
+          {isDelivery && (
+            <>
+              <label>
+                {t("checkout.street")}
+                <input name="street" value={form.street} onChange={handleChange} required />
+              </label>
+              <label>
+                {t("checkout.houseNumber")}
+                <input
+                  name="house_number"
+                  value={form.house_number}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label>
+                {t("checkout.postalCode")}
+                <input
+                  name="postal_code"
+                  value={form.postal_code}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label>
+                {t("checkout.city")}
+                <input name="city" value={form.city} onChange={handleChange} required />
+              </label>
+            </>
+          )}
         </div>
         <fieldset className="radio-group">
           <legend>{t("checkout.shippingOptions")}</legend>

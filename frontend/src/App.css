@@ -392,6 +392,10 @@ main {
   margin-top: 2rem;
 }
 
+.checkout-page .cart-summary {
+  margin-top: 5.7rem;
+}
+
 .checkout-form {
   background: #fff;
   padding: 2rem;
@@ -403,6 +407,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.checkout h2,
+.checkout-form h3 {
+  color: #fff;
 }
 
 .checkout-form .form-grid {
