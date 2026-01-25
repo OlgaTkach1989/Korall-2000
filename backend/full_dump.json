@@ -1,0 +1,1954 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$mZClFoFW5Yw7wvCtB829xS$DOna0Y7r/rOROOt5hTN6doC9m+U1UdsnFFfkEZqPsG0=",
+    "last_login": "2026-01-05T11:57:49.827Z",
+    "is_superuser": true,
+    "username": "OlhaTkachuk",
+    "first_name": "Olga",
+    "last_name": "Tkachuk",
+    "email": "olga.tkachuk@tn.techstarter.de",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-12-27T15:27:39Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$FaLf5rrJlTnorJ1xS4Ofyf$zLdQdGSwRuKnmtfEhjS+88xBr5SIA7fFnf+SlKTTNu0=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "olga.tkachuk@tn.techstarter.de",
+    "first_name": "Alisia",
+    "last_name": "Woron",
+    "email": "olga.tkachuk@tn.techstarter.de",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-01-05T12:00:01Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7xfzhqe3upwv3d238386ea4hsoa9yp0a",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlmsHf8o6XOGaL1r4wCypTipEHeHSCmgfTPzXmLCbS3T1tMyzSwuAsTpd4tIj1R3wHestyap1XWZo9wVedAux8bpeT3cv4OCvXxrn3XwmbQB1iqRtXyGrCMlxd4hgjNKEWDwOCgDaHXQ2RkLlH1gNyTx_gDioTeu:1vZWDD:P4GzSKanGTc31COBOWSNLYTdFi8spSMxZHeMZWWv-eE",
+    "expire_date": "2026-01-10T15:28:11.499Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qng1d377pg9dcjoi8gtjqhffp10000lh",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlmsHf8o6XOGaL1r4wCypTipEHeHSCmgfTPzXmLCbS3T1tMyzSwuAsTpd4tIj1R3wHestyap1XWZo9wVedAux8bpeT3cv4OCvXxrn3XwmbQB1iqRtXyGrCMlxd4hgjNKEWDwOCgDaHXQ2RkLlH1gNyTx_gDioTeu:1vbL4e:OSoWCHYtRRaeGbuQD7VvJCUoiP_og0RehPvNImG0F_Q",
+    "expire_date": "2026-01-15T15:58:52.440Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wr6xnx7bow1dkzp5ixqc4jsgsxy53v2n",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlmsHf8o6XOGaL1r4wCypTipEHeHSCmgfTPzXmLCbS3T1tMyzSwuAsTpd4tIj1R3wHestyap1XWZo9wVedAux8bpeT3cv4OCvXxrn3XwmbQB1iqRtXyGrCMlxd4hgjNKEWDwOCgDaHXQ2RkLlH1gNyTx_gDioTeu:1vcjDZ:GkjCCdirPg_g90ab7nRmQ8YtGAINWOMXqyM5Sw7tl6g",
+    "expire_date": "2026-01-19T11:57:49.833Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "created_at": "2025-12-27T15:38:50.783Z",
+    "updated_at": "2025-12-27T16:46:10.070Z",
+    "name": "100 Stück Logo Farbe Einkaufstasche",
+    "slug": "100-stuck-logo-farbe-einkaufstasche-mit-griff-kunststoff-geschenk-tasche-businss-kunden-plastiktute",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\n100 TÜTEN FÜR DEN EINZELHANDEL: Zeigen Sie Ihre Wertschätzung mit diesen stilvollen, glänzenden Dankeschön-Geschenken\r\nMaterial: Plastik\r\nEigenschaft : Umweltfreundlich\r\nVerwendung: Mehrzweck\r\nGeeignete Anlässe: Einkaufen im Einkaufszentrum, Verpackungsbeutel, Party, Geburtstag, Hochzeit",
+    "price": "0.52",
+    "minimum_price": "0.42",
+    "lead_time_days": 5,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/515YIAF5YdL._AC_SX679_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-12-27T15:43:48.391Z",
+    "updated_at": "2025-12-27T16:47:01.083Z",
+    "name": "iplusmile 100 Stück Warentaschen mit Griff Plastiktüten Wiederverwendbare",
+    "slug": "iplusmile-100-stuck-warentaschen-mit-griff-plastiktuten-wiederverwendbare-und-haltbare-einkaufstaschen-fur-geschenke-hem",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\nKunststoffmaterial: Diese Taschen mit Griffen bestehen aus Kunststoff. Die Oberfläche ist glatt, wasserdicht, reißfest, langlebig und wiederverwendbar. Und ausgestattet mit einem hohlen Griff für einfaches Tragen\r\nMittlere Größe: Diese Einkaufstaschen aus Kunststoff sind 20 cm breit und 30 cm hoch und eignen sich daher perfekt als Geschenktüten oder Boutique-Taschen. Perfekt für Kleidung, Kunsthandwerk, Geschenke oder mittelgroße Artikel\r\n100 Stück/Set: Enthält 100 Einkaufstüten aus Kunststoff, geeignet für kleine Unternehmen, Geschäfte, Einzelhandelsgeschäfte, Lebensmittelgeschäfte. Diese großen Plastiktüten sind eine ideale Verpackungslösung, die Funktionalität und Mode vereint\r\nGeschenktüten für Feiertage: Sie können sie als Party-Geschenktüten verwenden, um Spielzeug, Schokolade, Süßigkeiten, Kekse, Snacks und mehr aufzubewahren. Die Geschenktüten eignen sich sehr gut für Halloween- und Weihnachtsfeiern\r\nVielfältige Anwendungsmöglichkeiten: Diese Plastiktüte eignet sich perfekt als Dankeschön-Tasche, Boutique-Tasche, Warentasche, Geschenktasche, Kosmetiktasche, Partygeschenktasche und Einkaufstasche für kleine Unternehmen",
+    "price": "0.14",
+    "minimum_price": "0.13",
+    "lead_time_days": 6,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/51nqc-Hb-CL._AC_SX679_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-12-27T15:45:49.096Z",
+    "updated_at": "2025-12-27T16:45:12.131Z",
+    "name": "100 Stück Einkaufstaschen Plastik 38 x 30cm",
+    "slug": "100-stuck-einkaufstaschen-plastik-38-x-30cm-haltbar-weiss-thank-you-plastik-beutel-tuten-geschenktaschen-zum-verpacken",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\nPremium Dankestüten mit Thank You: Das Paket enthält 100 dicke, weiße tragetasche plastik mit dem goldenen Aufdruck \"Thank You“. Perfekt für den Großhandel oder Großeinkauf. Mit diesen formschönen, robusten Geschäftstüten können Sie Ihr Geschenk- und Einkaufserlebnis verbessern!\r\nTaschen in Perfekter Größe für Laden Markt: Diese weißen warentaschen plastik sind 30 cm breit und 38 cm hoch, eignen sich perfekt als Geschenktüte oder Boutique-Tasche. Ideal für Kleidung, Kunsthandwerk, Geschenke oder mittelgroße Waren.\r\nStabile Thank You Tüten Plastik: Diese weißen thank you bag mit henkel bestehen aus hochwertigem 1,75 MIL dickem LDPE-Kunststoff. Sie sind leicht zu tragen, haben eine glänzende Oberfläche, sind wasserdicht, reißfest, robust, langlebig und wiederverwendbar. Die 30 x 38 cm großen weißen tüte sind die perfekten einkaufstüten plastik für Boutiquen oder kleine Unternehmen.\r\nVielseitige Dankeschön-Einkaufstaschen mit Griffen: Diese Plastiktüten mit gestanzten Griffen eignen sich perfekt als Dankeschön-Taschen, Gastgeschenke, Boutique-Taschen, Einkaufstaschen, Merchandise-Taschen, Geschenktüten, Kosmetik-, Werbeartikel-, Party-, Geschenk-, Goodie-Bags und Einkaufstaschen für kleine Unternehmen. Zeigen Sie Ihre Wertschätzung mit diesen stylischen Dankeschön-Taschen mit Griffen.\r\nPerfekte Mehrzwecktaschen: Diese Plastiktüten in Großpackungen sind die ideale Verpackungslösung – praktisch und stylisch zugleich – für kleine Unternehmen, Läden, Einzelhandelsgeschäfte, Lebensmittelläden und Werbeveranstaltungen. Ob für den täglichen Gebrauch oder besondere Anlässe – die Plastiktüten in Großpackungen bieten eine kostengünstige und umweltfreundliche Verpackungslösung, die den Bedürfnissen kleiner Unternehmen gerecht wird.",
+    "price": "0.22",
+    "minimum_price": "0.20",
+    "lead_time_days": 5,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/61JLVecOYQL._AC_SY450_PIbundle-100,TopRight,0,0_SH20_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "created_at": "2025-12-27T15:48:16.269Z",
+    "updated_at": "2025-12-27T16:46:25.951Z",
+    "name": "300 Stück Geschenktüten, Candy Tüten",
+    "slug": "300-stuck-geschenktuten-candy-tuten-waren-taschen-tragetaschen-plastik-mit-thank-you-kunststoff-einkaufstaschen-3",
+    "short_description": "300 Stück",
+    "description": "Info zu diesem Artikel\r\n🛍【Einzelhandel Taschen】 Waren plastiktuiten set enthält in 3 verschiedenen Größen, 100 Stück pro Größe, erhältlich für verschiedene Einkaufszwecke und tägliche Gebrauchsoptionen. Ihre Kunden werden sich über diese personalisierten, stilvollen, edlen und Dankeschön Verpackungstaschen freuen.\r\n✨【Größeninformationen】Diese Geschenktüten ist 15 x 20 cm/ 5,9 x 7,9 Zoll, 20 x 30 cm/ 7,9 x 11,8 Zoll und 25 x 35 cm/ 9,8 x 13,8 Zoll. Die kleine Größe kann für Ohrringe und einige kleine Dekorationen verwendet werden, die mittlere Größe kann für Socken, den täglichen Bedarf und die große Größe für T-Shirts, Kleidung und sperrige Gegenstände verwendet werden.Eine großartige Option für kleine Einzelhändler um Einkaufstaschen in großen Mengen zu kaufen.\r\n💖【Modisch und einzigartig】 Die Einkaufstasche besteht aus schwarz-weißen Streifen und einem rosa Muster mit “Thank You” Dankeschön. Unser stilvolles faltbares Einkaufstaschen-Set trägt dazu bei, das Einkaufserlebnis der Kunden zu verbessern. Thank You Plastikbeutel, Für Geschenke Lebensmittel, Kleidung, Kiosk, Gastronomie, Haushalt, Laden.die alle Ihre erfüllen.\r\n✔️【Leicht zu tragen】 Sie bestehen aus hochwertigem Kunststoff und sind mit Griffausschnitten ausgestattet, perfekt für Partys und Geburtstagsveranstaltungen, Glatte Oberfläche und stabiler Griff, einfach zu bedienen und bequem zu tragen. Als Geschenktüte ideal, um Kunden, Freunden, Familie das Beste zu bieten.\r\n🎉【Mehrzweck Plastiktüten】 Diese geschenktuiten bestehen perfekt für die Party Ihres Kindes. Sie können es als Geschenktüte verwenden, um Spielzeug, Pralinen, Süßigkeiten, Kekse, Leckereien und mehr aufzubewahren. Kinder werden die Party mit diesen lustigen Geschenktüten genießen.\r\n🎁【Partys und Geschenke】 Geschenktüten für basteln am kindergeburtstag , Basteln, Dekoration und Verpackung, Souvenirs, Geburtstage, Thanksgiving, Halloween, Weihnachten und Ostern. Dieses Set aus Dankestüten aus Kunststoff ist perfekt für Geburtstags-/Hochzeitsfeiern oder Braut-/Babypartys.Geschenktüten drücken Sie Ihre besten Wünsche aus, indem Sie Geschenke für andere verpacken.",
+    "price": "0.24",
+    "minimum_price": "0.23",
+    "lead_time_days": 7,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/610rmBjxlGL._AC_SX679_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 5,
+  "fields": {
+    "created_at": "2025-12-27T16:41:42.144Z",
+    "updated_at": "2025-12-27T16:46:35.848Z",
+    "name": "Einkaufstaschen mit individuellem Logo",
+    "slug": "einkaufstaschen-mit-individuellem-logo-mit-geschenktuten-wiederverwendbare-merchandise-tragetasche-personalisierter-t",
+    "short_description": "100 Stück",
+    "description": "Personalisierbar: Sie können jedes Design hinzufügen, einschließlich Muster, Foto, Text usw\r\nDer Druck ist wasserdicht. Sie werden nie verblassen!\r\nSehr gute Tragfähigkeit. Wiederverwendbar. Langlebig, robust, belastbar - unterstützt Lasten ohne Überdehnung oder Reißen.\r\nBitte benachrichtigen Sie uns über dringende Bestellungen. Unsere Taschen sind leicht waschbar, sodass Sie sie für eine lange Zeit wiederverwenden können.\r\nSie können Boutique-Taschen, Aktivitätstaschen, Geburtstagsgeschenktüten usw. sein",
+    "price": "0.47",
+    "minimum_price": "0.45",
+    "lead_time_days": 10,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/61pWq-2rbpL._AC_SX679_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 6,
+  "fields": {
+    "created_at": "2025-12-27T16:44:26.023Z",
+    "updated_at": "2025-12-27T16:47:16.747Z",
+    "name": "NASS 50x Tragetüte schwarz Hemdchentragetasche",
+    "slug": "nass-50x-tragetute-schwarz-hemdchentragetasche-tragetasche-plastiktute-thank-you-54x2812cm-24my-15l",
+    "short_description": "100 Stück",
+    "description": "50 Stück, je max. 14 kg Tragelast",
+    "price": "0.17",
+    "minimum_price": "0.15",
+    "lead_time_days": 5,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/61Y4RyKvliL._AC_SX679_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 7,
+  "fields": {
+    "created_at": "2025-12-27T16:51:08.558Z",
+    "updated_at": "2025-12-27T16:51:08.558Z",
+    "name": "Hemdchentragetaschen Plastik. Plastiktüten mit Henkel 40x50cm. T-Shirt-Taschen",
+    "slug": "hemdchentragetaschen-plastik-plastiktuten-mit-henkel-40x50cm-t-shirt-taschen",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\n// TASCHEN: Unsere Plastiktüten mit Henkel bestehen zu 70 % aus recyceltem Material und sind nicht nur langlebig, sondern auch umweltfreundlich. Eine verantwortungsvolle Option für Ihre Einkäufe sind diese Plastiktüten.\r\n// MATERIALIEN: Das Produkt besteht aus hochdichtem Polyethylen. Zusammensetzung: 70 % recyceltes Recyclingmaterial.\r\n// GROSSE BESTÄNDIGKEIT: Hochbeständige weiße Plastiktüten, perfekt für den täglichen Gebrauch. Ideal für die Lagerung im Supermarkt, zu Hause und für den Transport schwerer Produkte.\r\n// ANWENDUNGSMÖGLICHKEITEN: Unsere kleinen Plastiktüten sind vielseitig einsetzbar. Leicht zu transportieren dank stabiler Griffe, ideal zum Einkaufen, Aufbewahren und mehr.\r\n// QUALITÄTSKONTROLLE: Der Hersteller verfügt über ein integriertes Qualitäts-, Umwelt- und Lebensmittelsicherheitsmanagementsystem, zertifiziert nach den Normen UNE-EN-ISO 9001:2008 und UNE-EN-ISO 14001:2004.",
+    "price": "0.11",
+    "minimum_price": "0.98",
+    "lead_time_days": 7,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/512gK2krU6L._AC_SY879_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 8,
+  "fields": {
+    "created_at": "2025-12-27T16:52:57.910Z",
+    "updated_at": "2025-12-27T16:52:57.910Z",
+    "name": "100St Folienversandtaschen Plastikversandbeutel Versandbeutel",
+    "slug": "100st-folienversandtaschen-plastikversandbeutel-versandbeutel",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\nPolyethylen Versandtaschen - Diese 25.5x33cm Polyethylen-Versandtüten sind und unterscheiden sich von gewöhnlichen Polyethylen-Versandtaschen. Blumen-Versandbeutel hergestellt aus reißfestem Material, sind sie leicht und dennoch langlebig, was die Sicherheit und Unversehrtheit Ihrer Waren während des Versandprozesses gewährleistet.\r\nBlumenmuster Design - Unsere 25.5x33cm großen Blumenmuster sind exquisite Geschenkverpackungs- und Verpackungstüten. Sie können diese Tüten zum Versandtaschen kleidung von Geschenken verwenden, insbesondere zu Anlässen wie Geburtstagen, Muttertag, Hochzeiten und anderen Feierlichkeiten. Die filigranen und lebendigen Blumenmuster verleihen Ihren Geschenken eine romantische Frühlingsatmosphäre.\r\nDicke und robuste Struktur - Mit einer Stärke von 2.4 Mil sind diese Pakete für Versand widerstandsfähig gegen Durchstechen und Beschädigungen. Darüber hinaus bietet der Versandtaschen für Kleidung durch die verstärkten Versiegelungen an den Rändern eine hervorragende wasser- und reißfeste Wirkung. Selbst bei nebligem oder regnerischem Wetter liefern sie Ihre wertvollen Artikel sicher am Zielort ab.\r\nSelbstklebender Verschluss mit starkem Klebestreifen - Jeder 25.5x33cm Versandtüten für Kleidung enthält einen starken, ganzjährig haftenden Selbstklebeverschluss, der auch bei extrem heißen oder kalten Temperaturen eine starke Klebkraft beibehält. Versandtaschen Warensendung Einmal verschlossen, kommen Ihre Artikel sicher an, ohne Risiko des Öffnens oder Manipulation.\r\nUmfassende Anwendungsmöglichkeiten - Unsere Vinted Verpackung sind die perfekte Wahl für verschiedene kleine Unternehmen, Einkaufszentren sowie Online-und Offline-Einzelhändler. Sie steigern Ihre Produktivität, sparen wertvolle Zeit und reduzieren Versandkosten. Die Versandtasche eignen sich ideal für den Versand leichter und unempfindlicher Produkte wie Kleidung, Hemden, Schuhe, Jeans, Bücher, Kosmetikartikel, Spielzeug und mehr.",
+    "price": "0.15",
+    "minimum_price": "0.13",
+    "lead_time_days": 5,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/818iYP76jYL._SL1500_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 9,
+  "fields": {
+    "created_at": "2025-12-27T16:54:45.306Z",
+    "updated_at": "2025-12-27T16:54:45.306Z",
+    "name": "Requisite Needs Blaue Kunststoff-Westentasche, Geschenktasche",
+    "slug": "requisite-needs-blaue-kunststoff-westentasche-geschenktasche",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\n200 große blaue Kunststoff-Westenträger.\r\nHohe Qualität – 17 Mikron Stärke macht diese Taschen sehr nützlich für eine Vielzahl von Dingen. Kann für Einkäufe, Imbissbuden, Marktstände, Müllbeutel usw. verwendet werden.\r\nKostengünstig – Sie erhalten 200 große blaue Taschen, um zahlreiche Gegenstände zu tragen oder sogar Produkte und Gegenstände vor Staub und Wasser zu schützen.\r\n100% ZUFRIEDENHEIT - Diese Taschen durchlaufen mehrere Qualitätskontrollmaßnahmen, um sicherzustellen, dass Sie mit dem Artikel absolut zufrieden sind.\r\nGröße der Tragetasche: Große Tragetaschen 27,9 x 43,2 x 53,3 cm",
+    "price": "0.12",
+    "minimum_price": "0.10",
+    "lead_time_days": 5,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/61IkUqhDUWL._AC_SY741_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 10,
+  "fields": {
+    "created_at": "2025-12-27T16:57:59.736Z",
+    "updated_at": "2025-12-27T16:57:59.736Z",
+    "name": "NAHRMY 100 Stück Merchandise Einkaufstüten Plastik Geschenktüten",
+    "slug": "nahrmy-100-stuck-merchandise-einkaufstuten-plastik-geschenktuten",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\n100 Stück Thank You Plastikbeutel : Zwei verschiedene Größen, 50 Stück 15,7 x 11,8 Zoll mittlere Warentaschen, 50 Stück 11,8 x 7,9 Zoll kleine Boutique-Taschen. Plastiktüten eignen sich für kleine Unternehmen, Geschäfte, Boutiquen, Partys, Hochzeiten und vieles mehr.\r\nStilvoll Schöne Einkaufstaschen : Die rosa tragetaschen ist mit mehreren schönen Rosen und dem Schriftzug \"Thank You\" bedruckt. Zeigen Sie Ihre Wertschätzung mit diesen stilvollen und schönen Danksagungstaschen.\r\nBreite Palette von Anwendungen : Diese Kunststoff-Geschenktaschen für den Einzelhandel sind praktisch für Gratisproben, Werbeartikel, Bastelmaterial, Partyzubehör, Bücher, Schreibwaren, Dokumente, Kleidung, Schmuck, Lebensmittel und vieles mehr.\r\nUltradicker Plastikbeutel : Unsere Warentaschen sind aus extra dickem Material (2.56MIL) hergestellt. Sie haben eine dicke, robuste Konstruktion und können mehr Gewicht tragen als normale Plastiktüten. Sie können wiederholt verwendet und dann zur Herstellung anderer Produkte recycelt werden.\r\nLeicht zu transportieren : Die kleine bis mittlere Businesstasche hat eine gute Größe, ist leicht und einfach zu tragen. Alle Danksagungstaschen haben einen festen Tragegriff, der die Handhabung erleichtert.",
+    "price": "0.19",
+    "minimum_price": "0.18",
+    "lead_time_days": 5,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/71BRExdBxWL._AC_SX679_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 11,
+  "fields": {
+    "created_at": "2025-12-27T17:00:04.342Z",
+    "updated_at": "2025-12-27T17:00:04.342Z",
+    "name": "Maxqzin 50 Stück GeschenktüTen",
+    "slug": "maxqzin-50-stuck-geschenktuten",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\n【Geeignete Größe】Die Größe dergeschenktüten beträgt 16,5 x 25 cm. Sehr geeignet für Versammlungen, Sie können sie verwenden, um Kekse, Süßigkeiten, Kekse, Pralinen, Preise, Kunsthandwerk und verschiedene Snacks für Freunde und Familie zu verpacken\r\n【Lieferumfang】Dieses Paket enthält 50 rosa geschenktüten kindergeburtstag aus Kunststoff. Die ausreichende Menge reicht aus, um Ihre Ersatz- und Dekorationsbedürfnisse zu erfüllen und kann auch mit Ihren Freunden geteilt werden\r\n【Material】Geschenktüten aus hochwertigem Material, mit klaren Mustern, robust und langlebig, wiederverwendbar und glatte Oberfläche, was sie zu einer idealen Wahl für Geschenkverpackungen macht\r\n【Rosa Schleifen-Design】Die Geschenktüte ist mit Schleifenmustern bedruckt, geschickt gestaltet mit exquisiten und auffälligen Schleifenmustern auf der Vorder- und Rückseite\r\n【Weitgehend anwendbar】Unsere Geschenktüten mit rosa Schleife eignen sich für die meisten Anlässe, wie zum Beispiel Partys mit rosa Motto, Mädchenpartys, Junggesellinnenabschiede, Babypartys und Geburtstagsfeiern",
+    "price": "0.14",
+    "minimum_price": "0.13",
+    "lead_time_days": 10,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/61xVmaf9SDL._AC_SY450_.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 12,
+  "fields": {
+    "created_at": "2025-12-27T17:02:01.324Z",
+    "updated_at": "2025-12-27T17:02:01.324Z",
+    "name": "100 Stück Thank You Tüten 30 x 23cm",
+    "slug": "100-stuck-thank-you-tuten-30-x-23cm",
+    "short_description": "100 Stück",
+    "description": "Info zu diesem Artikel\r\nPlastik Geschenktüten mit Griffdesign: Ein praktisches Design, das die Hände frei macht. Diese Geschenktüten hat eine tragbare Funktion. Sie kann leicht mit einer Hand angehoben werden und spart Platz, ohne sich um Stürze sorgen zu müssen.\r\nTaschen in Perfekter Größe für Laden Partys: Diese warentaschen plastik sind 23CM breit und 30CM hoch und haben keinen Zwickel. Sie haben die perfekte Größe für die Verwendung als Geschenktüte oder Boutique-Tasche. Ideal für Kleidung, Kunsthandwerk, Geschenke oder andere mittelgroße Waren.\r\nStabile Thank You Tüten Plastik: Diese thank you bag mit henkel bestehen aus hochwertigem 1,75 MIL dickem LDPE-Kunststoff. Sie sind leicht zu tragen, haben eine glänzende Oberfläche, sind wasserdicht, reißfest, robust, langlebig und wiederverwendbar. Die 30 x 23cm großen tüte sind die perfekten einkaufstüten plastik für Boutiquen oder kleine Unternehmen.\r\nVielseitige Dankeschön-Einkaufstaschen mit Griffen: Diese Plastiktüten mit gestanzten Griffen eignen sich perfekt als Dankeschön-Taschen, Gastgeschenke, Boutique-Taschen, Einkaufstaschen, Merchandise-Taschen, Geschenktüten, Kosmetik-, Werbeartikel-, Party-, Geschenk-, Goodie-Bags und Einkaufstaschen für kleine Unternehmen. Zeigen Sie Ihre Wertschätzung mit diesen stylischen Dankeschön-Taschen mit Griffen.\r\nPerfekte Mehrzwecktaschen: Diese Plastiktüten in Großpackungen sind die ideale Verpackungslösung – praktisch und stylisch zugleich – für kleine Unternehmen, Läden, Einzelhandelsgeschäfte, Lebensmittelläden und Werbeveranstaltungen. Ob für den täglichen Gebrauch oder besondere Anlässe – die Plastiktüten in Großpackungen bieten eine kostengünstige und umweltfreundliche Verpackungslösung, die den Bedürfnissen kleiner Unternehmen gerecht wird.",
+    "price": "0.20",
+    "minimum_price": "0.18",
+    "lead_time_days": 10,
+    "is_active": true,
+    "image_url": "https://m.media-amazon.com/images/I/71zdCPZnUaL._AC_SY450_PIbundle-100,TopRight,0,0_SH20_.jpg"
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-12-27T15:51:52.122Z",
+    "updated_at": "2025-12-27T15:51:52.122Z",
+    "customer": null,
+    "contact_email": "svlogistics00@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13629",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "pending",
+    "last_email_error": "",
+    "last_email_attempt_at": null,
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 4,
+  "fields": {
+    "created_at": "2025-12-27T17:24:21.640Z",
+    "updated_at": "2025-12-27T17:24:21.641Z",
+    "customer": null,
+    "contact_email": "svlogistics00@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13629",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "pending",
+    "last_email_error": "",
+    "last_email_attempt_at": null,
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 5,
+  "fields": {
+    "created_at": "2025-12-27T18:50:52.859Z",
+    "updated_at": "2025-12-27T18:50:52.859Z",
+    "customer": null,
+    "contact_email": "svlogistics00@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13629",
+    "city": "Berlin",
+    "status": "shipped",
+    "is_deleted": false,
+    "last_email_status": "pending",
+    "last_email_error": "",
+    "last_email_attempt_at": null,
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 6,
+  "fields": {
+    "created_at": "2025-12-27T19:12:17.412Z",
+    "updated_at": "2025-12-27T19:12:17.412Z",
+    "customer": null,
+    "contact_email": "svlogistics00@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13629",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "pending",
+    "last_email_error": "",
+    "last_email_attempt_at": null,
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-01-01T16:08:50.667Z",
+    "updated_at": "2026-01-01T16:08:50.667Z",
+    "customer": null,
+    "contact_email": "olhina1964@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Marina",
+    "last_name": "Diakova",
+    "street": "Grammestr",
+    "house_number": "3",
+    "postal_code": "13629",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "pending",
+    "last_email_error": "",
+    "last_email_attempt_at": null,
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-01-05T14:05:30.641Z",
+    "updated_at": "2026-01-05T14:05:30.641Z",
+    "customer": null,
+    "contact_email": "olgakalinicenko378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Marina",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13269",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T14:05:31.482Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-01-05T17:12:30.882Z",
+    "updated_at": "2026-01-05T17:12:30.882Z",
+    "customer": null,
+    "contact_email": "olga.tkachuk378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Diakov",
+    "street": "Alfred-Rand-Straße",
+    "house_number": "13",
+    "postal_code": "10589",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T17:12:31.607Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-01-05T17:23:29.304Z",
+    "updated_at": "2026-01-05T17:23:29.304Z",
+    "customer": null,
+    "contact_email": "olgakalinicenko378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Marina",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13269",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T17:23:30.313Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-01-05T17:30:28.210Z",
+    "updated_at": "2026-01-05T17:30:28.210Z",
+    "customer": null,
+    "contact_email": "olga.tkachuk378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Diakov",
+    "street": "Alfred-Rand-Straße",
+    "house_number": "13",
+    "postal_code": "10589",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T17:30:29.486Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-01-05T17:33:37.148Z",
+    "updated_at": "2026-01-05T17:33:37.148Z",
+    "customer": null,
+    "contact_email": "olga.tkachuk378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Diakov",
+    "street": "Alfred-Rand-Straße",
+    "house_number": "13",
+    "postal_code": "10589",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T17:33:38.272Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-01-05T17:38:48.360Z",
+    "updated_at": "2026-01-05T17:38:48.360Z",
+    "customer": null,
+    "contact_email": "olga.tkachuk378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Diakov",
+    "street": "Alfred-Rand-Straße",
+    "house_number": "13",
+    "postal_code": "10589",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T17:38:49.388Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-01-05T17:39:42.500Z",
+    "updated_at": "2026-01-05T17:39:42.500Z",
+    "customer": null,
+    "contact_email": "olgakalinicenko378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Marina",
+    "last_name": "Tkachuk",
+    "street": "Grammestraße",
+    "house_number": "3",
+    "postal_code": "13269",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-05T17:39:43.319Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-01-06T13:01:08.131Z",
+    "updated_at": "2026-01-06T13:01:08.131Z",
+    "customer": null,
+    "contact_email": "olga.tkachuk378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Diakov",
+    "street": "Alfred-Rand-Straße",
+    "house_number": "13",
+    "postal_code": "10589",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-06T13:01:10.852Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.order",
+  "pk": 26,
+  "fields": {
+    "created_at": "2026-01-06T13:04:58.385Z",
+    "updated_at": "2026-01-06T18:07:58.282Z",
+    "customer": null,
+    "contact_email": "olga.tkachuk378@gmail.com",
+    "delivery_type": "delivery",
+    "first_name": "Serhii",
+    "last_name": "Diakov",
+    "street": "Alfred-Rand-Straße",
+    "house_number": "13",
+    "postal_code": "10589",
+    "city": "Berlin",
+    "status": "new",
+    "is_deleted": false,
+    "last_email_status": "sent",
+    "last_email_error": "",
+    "last_email_attempt_at": "2026-01-06T13:05:00Z",
+    "notes": ""
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-12-27T15:51:52.138Z",
+    "updated_at": "2025-12-27T15:51:52.138Z",
+    "order": 2,
+    "product": 3,
+    "quantity": 100,
+    "unit_price": "2.29"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-12-27T15:51:52.142Z",
+    "updated_at": "2025-12-27T15:51:52.142Z",
+    "order": 2,
+    "product": 1,
+    "quantity": 100,
+    "unit_price": "5.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 5,
+  "fields": {
+    "created_at": "2025-12-27T17:24:21.668Z",
+    "updated_at": "2025-12-27T17:24:21.668Z",
+    "order": 4,
+    "product": 4,
+    "quantity": 300,
+    "unit_price": "0.24"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 6,
+  "fields": {
+    "created_at": "2025-12-27T17:24:21.672Z",
+    "updated_at": "2025-12-27T17:24:21.672Z",
+    "order": 4,
+    "product": 1,
+    "quantity": 300,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 7,
+  "fields": {
+    "created_at": "2025-12-27T17:24:21.673Z",
+    "updated_at": "2025-12-27T17:24:21.674Z",
+    "order": 4,
+    "product": 12,
+    "quantity": 100,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 8,
+  "fields": {
+    "created_at": "2025-12-27T18:50:52.954Z",
+    "updated_at": "2025-12-27T18:50:52.954Z",
+    "order": 5,
+    "product": 3,
+    "quantity": 1000,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 9,
+  "fields": {
+    "created_at": "2025-12-27T19:12:17.418Z",
+    "updated_at": "2025-12-27T19:12:17.418Z",
+    "order": 6,
+    "product": 3,
+    "quantity": 1000,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 10,
+  "fields": {
+    "created_at": "2025-12-27T19:12:17.421Z",
+    "updated_at": "2025-12-27T19:12:17.421Z",
+    "order": 6,
+    "product": 1,
+    "quantity": 100,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 11,
+  "fields": {
+    "created_at": "2025-12-27T19:12:17.423Z",
+    "updated_at": "2025-12-27T19:12:17.423Z",
+    "order": 6,
+    "product": 12,
+    "quantity": 100,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-01-01T16:08:50.672Z",
+    "updated_at": "2026-01-01T16:08:50.672Z",
+    "order": 9,
+    "product": 3,
+    "quantity": 1000,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 41,
+  "fields": {
+    "created_at": "2026-01-05T14:05:30.645Z",
+    "updated_at": "2026-01-05T14:05:30.645Z",
+    "order": 17,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 42,
+  "fields": {
+    "created_at": "2026-01-05T14:05:30.648Z",
+    "updated_at": "2026-01-05T14:05:30.648Z",
+    "order": 17,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 43,
+  "fields": {
+    "created_at": "2026-01-05T14:05:30.650Z",
+    "updated_at": "2026-01-05T14:05:30.650Z",
+    "order": 17,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 48,
+  "fields": {
+    "created_at": "2026-01-05T17:12:30.888Z",
+    "updated_at": "2026-01-05T17:12:30.888Z",
+    "order": 19,
+    "product": 3,
+    "quantity": 1000,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 49,
+  "fields": {
+    "created_at": "2026-01-05T17:12:30.891Z",
+    "updated_at": "2026-01-05T17:12:30.891Z",
+    "order": 19,
+    "product": 1,
+    "quantity": 100,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 50,
+  "fields": {
+    "created_at": "2026-01-05T17:12:30.893Z",
+    "updated_at": "2026-01-05T17:12:30.893Z",
+    "order": 19,
+    "product": 12,
+    "quantity": 100,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 51,
+  "fields": {
+    "created_at": "2026-01-05T17:12:30.894Z",
+    "updated_at": "2026-01-05T17:12:30.894Z",
+    "order": 19,
+    "product": 8,
+    "quantity": 100,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 52,
+  "fields": {
+    "created_at": "2026-01-05T17:23:29.308Z",
+    "updated_at": "2026-01-05T17:23:29.308Z",
+    "order": 20,
+    "product": 3,
+    "quantity": 1000,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 53,
+  "fields": {
+    "created_at": "2026-01-05T17:23:29.311Z",
+    "updated_at": "2026-01-05T17:23:29.311Z",
+    "order": 20,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 54,
+  "fields": {
+    "created_at": "2026-01-05T17:23:29.312Z",
+    "updated_at": "2026-01-05T17:23:29.312Z",
+    "order": 20,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 55,
+  "fields": {
+    "created_at": "2026-01-05T17:23:29.313Z",
+    "updated_at": "2026-01-05T17:23:29.313Z",
+    "order": 20,
+    "product": 8,
+    "quantity": 1,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 56,
+  "fields": {
+    "created_at": "2026-01-05T17:30:28.218Z",
+    "updated_at": "2026-01-05T17:30:28.218Z",
+    "order": 21,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 57,
+  "fields": {
+    "created_at": "2026-01-05T17:30:28.221Z",
+    "updated_at": "2026-01-05T17:30:28.221Z",
+    "order": 21,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 58,
+  "fields": {
+    "created_at": "2026-01-05T17:30:28.222Z",
+    "updated_at": "2026-01-05T17:30:28.222Z",
+    "order": 21,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 59,
+  "fields": {
+    "created_at": "2026-01-05T17:30:28.223Z",
+    "updated_at": "2026-01-05T17:30:28.223Z",
+    "order": 21,
+    "product": 8,
+    "quantity": 1,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 60,
+  "fields": {
+    "created_at": "2026-01-05T17:33:37.155Z",
+    "updated_at": "2026-01-05T17:33:37.155Z",
+    "order": 22,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 61,
+  "fields": {
+    "created_at": "2026-01-05T17:33:37.158Z",
+    "updated_at": "2026-01-05T17:33:37.158Z",
+    "order": 22,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 62,
+  "fields": {
+    "created_at": "2026-01-05T17:33:37.159Z",
+    "updated_at": "2026-01-05T17:33:37.159Z",
+    "order": 22,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 63,
+  "fields": {
+    "created_at": "2026-01-05T17:33:37.160Z",
+    "updated_at": "2026-01-05T17:33:37.160Z",
+    "order": 22,
+    "product": 8,
+    "quantity": 1,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 64,
+  "fields": {
+    "created_at": "2026-01-05T17:38:48.367Z",
+    "updated_at": "2026-01-05T17:38:48.367Z",
+    "order": 23,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 65,
+  "fields": {
+    "created_at": "2026-01-05T17:39:42.503Z",
+    "updated_at": "2026-01-05T17:39:42.503Z",
+    "order": 24,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 66,
+  "fields": {
+    "created_at": "2026-01-05T17:39:42.506Z",
+    "updated_at": "2026-01-05T17:39:42.506Z",
+    "order": 24,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 67,
+  "fields": {
+    "created_at": "2026-01-05T17:39:42.507Z",
+    "updated_at": "2026-01-05T17:39:42.507Z",
+    "order": 24,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 68,
+  "fields": {
+    "created_at": "2026-01-05T17:39:42.508Z",
+    "updated_at": "2026-01-05T17:39:42.508Z",
+    "order": 24,
+    "product": 8,
+    "quantity": 1,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 69,
+  "fields": {
+    "created_at": "2026-01-06T13:01:08.182Z",
+    "updated_at": "2026-01-06T13:01:08.182Z",
+    "order": 25,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 70,
+  "fields": {
+    "created_at": "2026-01-06T13:01:08.197Z",
+    "updated_at": "2026-01-06T13:01:08.197Z",
+    "order": 25,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 71,
+  "fields": {
+    "created_at": "2026-01-06T13:01:08.200Z",
+    "updated_at": "2026-01-06T13:01:08.200Z",
+    "order": 25,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 72,
+  "fields": {
+    "created_at": "2026-01-06T13:01:08.203Z",
+    "updated_at": "2026-01-06T13:01:08.203Z",
+    "order": 25,
+    "product": 8,
+    "quantity": 1,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 73,
+  "fields": {
+    "created_at": "2026-01-06T13:04:58.426Z",
+    "updated_at": "2026-01-06T13:04:58.426Z",
+    "order": 26,
+    "product": 3,
+    "quantity": 1,
+    "unit_price": "0.22"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 74,
+  "fields": {
+    "created_at": "2026-01-06T13:04:58.434Z",
+    "updated_at": "2026-01-06T13:04:58.434Z",
+    "order": 26,
+    "product": 1,
+    "quantity": 1,
+    "unit_price": "0.52"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 75,
+  "fields": {
+    "created_at": "2026-01-06T13:04:58.437Z",
+    "updated_at": "2026-01-06T13:04:58.437Z",
+    "order": 26,
+    "product": 12,
+    "quantity": 1,
+    "unit_price": "0.20"
+  }
+},
+{
+  "model": "shop.orderitem",
+  "pk": 76,
+  "fields": {
+    "created_at": "2026-01-06T13:04:58.448Z",
+    "updated_at": "2026-01-06T13:04:58.448Z",
+    "order": 26,
+    "product": 8,
+    "quantity": 1,
+    "unit_price": "0.15"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-12-27T15:30:30.594Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "1",
+    "object_repr": "OlhaTkachuk",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-12-27T15:38:50.791Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "100 Stück Logo Farbe Einkaufstasche mit Griff Kunststoff Geschenk Tasche Businss Kunden Plastiktüte",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-12-27T15:40:07.959Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "olgakalinicenko378@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-12-27T15:40:24.480Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "olgakalinicenko378@gmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-12-27T15:43:48.392Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "iplusmile 100 Stück Warentaschen mit Griff Plastiktüten Wiederverwendbare Und Haltbare Einkaufstaschen für Geschenke Hem",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-12-27T15:45:49.097Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "100 Stück Einkaufstaschen Plastik 38 x 30cm, Haltbar Weiß Thank You Plastik-Beutel Tüten, Geschenktaschen zum Verpacken",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-12-27T15:48:16.270Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "300 Stück Geschenktüten, Candy Tüten, Waren Taschen, Tragetaschen Plastik mit “Thank You”, Kunststoff-Einkaufstaschen, 3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-12-27T15:50:07.608Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "iplusmile 100 Stück Warentaschen mit Griff Plastiktüten Wiederverwendbare Und Haltbare Einkaufstaschen für Geschenke Hem",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-12-27T15:50:36.536Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "300 Stück Geschenktüten, Candy Tüten, Waren Taschen, Tragetaschen Plastik mit “Thank You”, Kunststoff-Einkaufstaschen, 3",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-12-27T15:50:59.176Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "100 Stück Logo Farbe Einkaufstasche mit Griff Kunststoff Geschenk Tasche Businss Kunden Plastiktüte",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-12-27T15:51:12.804Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "100 Stück Einkaufstaschen Plastik 38 x 30cm, Haltbar Weiß Thank You Plastik-Beutel Tüten, Geschenktaschen zum Verpacken",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-12-27T16:41:42.151Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "5",
+    "object_repr": "Einkaufstaschen mit individuellem Logo, mit Geschenktüten, wiederverwendbare Merchandise-Tragetasche, personalisierter T",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-12-27T16:42:21.099Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "100 Stück Einkaufstaschen Plastik 38 x 30cm, Haltbar Weiß Thank You Plastik-Beutel Tüten, Geschenktaschen zum Verpacken",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-12-27T16:42:34.040Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "100 Stück Logo Farbe Einkaufstasche mit Griff Kunststoff Geschenk Tasche Businss Kunden Plastiktüte",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-12-27T16:42:52.337Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "300 Stück Geschenktüten, Candy Tüten, Waren Taschen, Tragetaschen Plastik mit “Thank You”, Kunststoff-Einkaufstaschen, 3",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-12-27T16:43:04.282Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "iplusmile 100 Stück Warentaschen mit Griff Plastiktüten Wiederverwendbare Und Haltbare Einkaufstaschen für Geschenke Hem",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\", \"Minimum price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-12-27T16:44:26.025Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "6",
+    "object_repr": "NASS 50x Tragetüte schwarz Hemdchentragetasche Tragetasche Plastiktüte Thank You 54x28+12cm 24my 15l",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-12-27T16:45:12.132Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "100 Stück Einkaufstaschen Plastik 38 x 30cm",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-12-27T16:45:31.171Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "100 Stück Logo Farbe Einkaufstasche mit Griff",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-12-27T16:46:10.071Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "100 Stück Logo Farbe Einkaufstasche",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-12-27T16:46:25.952Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "300 Stück Geschenktüten, Candy Tüten",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-12-27T16:46:35.850Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "5",
+    "object_repr": "Einkaufstaschen mit individuellem Logo",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-12-27T16:46:54.881Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "iplusmile 100 Stück Warentaschen mit Griff Plastiktüten Wiederverwendbare",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-12-27T16:47:01.085Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "iplusmile 100 Stück Warentaschen mit Griff Plastiktüten Wiederverwendbare",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-12-27T16:47:16.748Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "6",
+    "object_repr": "NASS 50x Tragetüte schwarz Hemdchentragetasche",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-12-27T16:51:08.560Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "7",
+    "object_repr": "Hemdchentragetaschen Plastik. Plastiktüten mit Henkel 40x50cm. T-Shirt-Taschen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-12-27T16:52:57.912Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "100St Folienversandtaschen Plastikversandbeutel Versandbeutel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-12-27T16:54:45.308Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "9",
+    "object_repr": "Requisite Needs Blaue Kunststoff-Westentasche, Geschenktasche",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-12-27T16:57:59.739Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "10",
+    "object_repr": "NAHRMY 100 Stück Merchandise Einkaufstüten Plastik Geschenktüten",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-12-27T17:00:04.343Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "11",
+    "object_repr": "Maxqzin 50 Stück GeschenktüTen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-12-27T17:02:01.326Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "product"
+    ],
+    "object_id": "12",
+    "object_repr": "100 Stück Thank You Tüten 30 x 23cm",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-01-01T16:00:15.426Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "7",
+    "object_repr": "Order #7",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-01-05T12:00:02.684Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "olga.tkachuk@tn.techstarter.de",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-01-05T12:01:03.221Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "olga.tkachuk@tn.techstarter.de",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-01-05T13:53:54.360Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "14",
+    "object_repr": "Order #14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-01-05T13:53:54.360Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "13",
+    "object_repr": "Order #13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-01-05T13:53:54.360Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "12",
+    "object_repr": "Order #12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-01-05T13:53:54.360Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "11",
+    "object_repr": "Order #11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-01-05T13:53:54.360Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "10",
+    "object_repr": "Order #10",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-01-05T14:03:24.080Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "15",
+    "object_repr": "Order #15",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-01-05T14:05:12.650Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "16",
+    "object_repr": "Order #16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-01-05T14:45:11.625Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "olgakalinicenko378@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-01-05T14:45:50.249Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "olga.tkachuk@tn.techstarter.de",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-01-05T14:47:49.096Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "olga.tkachuk@tn.techstarter.de",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-01-05T15:21:33.047Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "8",
+    "object_repr": "Order #8",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-01-05T17:15:59.944Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "18",
+    "object_repr": "Order #18",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-01-06T18:06:59.393Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "26",
+    "object_repr": "Order #26",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-01-06T18:07:58.284Z",
+    "user": [
+      "OlhaTkachuk"
+    ],
+    "content_type": [
+      "shop",
+      "order"
+    ],
+    "object_id": "26",
+    "object_repr": "Order #26",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+}
+]

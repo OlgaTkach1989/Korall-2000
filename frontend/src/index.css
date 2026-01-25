@@ -1,0 +1,44 @@
+:root {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #0c1b33;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  background-color: #f6f7fb;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/src/assets/HomeSeite.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px) brightness(0.75);
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
