@@ -64,4 +64,5 @@ VITE_API_URL=http://localhost:8000/api/
 
 ## 📸 Screenshots
 ![Homepage](./frontend/screenshots/Screenshot%202026-01-19%20191854.png)
+![Homepage](./frontend/screenshots/Screenshot%202026-01-18%20135052.png)
 
