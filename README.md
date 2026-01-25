@@ -61,3 +61,7 @@ VITE_API_URL=http://localhost:8000/api/
 - Zahlung, E-Mail-Benachrichtigungen, Mediendateien für Produkte.
 - PostgreSQL als Standard im Deployment nutzen.
 - Über AWS den Betrieb hosten (z.B. EC2/Elastic Beanstalk) und Bestellungen per E-Mail an den Manager zustellen.
+
+## 📸 Screenshots
+![App Screenshot](./screenshots/home.png)
+
