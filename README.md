@@ -63,5 +63,5 @@ VITE_API_URL=http://localhost:8000/api/
 - Über AWS den Betrieb hosten (z.B. EC2/Elastic Beanstalk) und Bestellungen per E-Mail an den Manager zustellen.
 
 ## 📸 Screenshots
-![Homepage](./frontend/screenshots/Screenshot-2026-01-19.png)
+![Homepage](./frontend/screenshots/Screenshot%202026-01-19%20191854.png)
 
