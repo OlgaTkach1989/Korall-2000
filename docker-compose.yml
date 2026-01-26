@@ -1,12 +1,14 @@
 services:
   db:
     image: postgres:16-alpine
+    restart: unless-stopped
     environment:
       POSTGRES_DB: packshop
       POSTGRES_USER: packshop
       POSTGRES_PASSWORD: packshop
+    # РЕКОМЕНДУЮ: не открывать БД наружу
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
 
@@ -14,6 +16,7 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
+    restart: unless-stopped
     env_file:
       - backend/.env
     environment:
@@ -24,13 +27,21 @@ services:
       POSTGRES_USER: packshop
       POSTGRES_PASSWORD: packshop
       IMPORT_FULL_DUMP: "1"
+
+    # Вариант A (прод-стиль): gunicorn
     command: >
-      python manage.py runserver 0.0.0.0:8000
+      sh -lc "gunicorn config.wsgi:application
+      --bind 0.0.0.0:8000
+      --workers 3
+      --timeout 120"
+
     ports:
       - "8000:8000"
+
     volumes:
       - ./backend:/app
       - ./backend/full_dump.json:/app/full_dump.json
+
     depends_on:
       - db
 
@@ -38,12 +49,18 @@ services:
     build:
       context: .
       dockerfile: frontend/Dockerfile
-    command: npm run dev -- --host 0.0.0.0 --port 5173
+    restart: unless-stopped
+
+    command: >
+      npm run dev -- --host 0.0.0.0 --port 5173
+
     ports:
       - "5173:5173"
+
     volumes:
       - ./frontend:/app
       - /app/node_modules
+
     depends_on:
       - backend
 
