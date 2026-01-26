@@ -29,17 +29,21 @@ services:
       IMPORT_FULL_DUMP: "1"
 
     # Вариант A (прод-стиль): gunicorn
-    command: >
-      sh -lc "gunicorn config.wsgi:application
-      --bind 0.0.0.0:8000
-      --workers 3
-      --timeout 120"
+    command:
+      - gunicorn
+      - server.wsgi:application
+      - --bind
+      - 0.0.0.0:8000
+      - --workers
+      - "3"
+      - --timeout
+      - "120"
 
     ports:
       - "8000:8000"
 
     volumes:
-      - ./backend:/app
+#      - ./backend:/app
       - ./backend/full_dump.json:/app/full_dump.json
 
     depends_on:

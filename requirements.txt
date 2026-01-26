@@ -4,3 +4,4 @@ django-cors-headers>=4.9
 psycopg[binary]>=3.3
 python-dotenv>=1.0
 boto3>=1.34
+gunicorn==22.0.0
