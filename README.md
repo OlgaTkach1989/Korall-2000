@@ -6,7 +6,7 @@
 ![Docker](https://img.shields.io/badge/DevOps-Docker-2496ed?style=for-the-badge&logo=docker&logoColor=white)
 
 ## Live Demo / Website
-[![Website](https://img.shields.io/badge/Website-Open-00b0b9?style=for-the-badge)](http://141.95.86.164:5173/)
+[![Website](https://img.shields.io/badge/Website-Open-00b0b9?style=for-the-badge)]http://141.95.86.164:5173/
 
 
 Ein praxisnahes Abschlussprojekt: ein Onlineshop fuer Verpackungstueten mit
