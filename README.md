@@ -1,37 +1,74 @@
-## Korall 2000 — Verpackungs-Shop (React + Django)
+﻿# Korall 2000 - Verpackungs-Shop (React + Django)
 
-Dieses Projekt habe ich (Olga) als Übungs‑Onlineshop für Verpackungstüten gebaut. Frontend: React (Vite). Backend: Django REST Framework. Standard-DB ist SQLite, PostgreSQL ist vorbereitet.
+Ein praxisnahes Abschlussprojekt: ein Onlineshop fuer Verpackungstueten mit
+React (Vite) im Frontend und Django + Django REST Framework im Backend.
 
-### Struktur
-```
+## Tech Stack
+- Frontend: React, Vite, React Router, Context API
+- Backend: Django, Django REST Framework
+- Datenbank: PostgreSQL (Docker) oder SQLite (lokal)
+- Deployment/Infra: Docker Compose
+
+## Features (MVP)
+- Seiten: Home, Produkte (Liste + Detail), Warenkorb, Checkout, Success, Admin
+- Produktdaten aus der API (mit sinnvollem Fallback bei API-Fehlern)
+- Warenkorb mit Mengen, Versandkosten und Gesamtsumme
+- Checkout mit Lieferung oder Abholung (Pickup reduziert Pflichtfelder)
+- Admin-Bereich mit Bestellstatus, Logistik-Sicht und Produktpflege
+
+## Projektstruktur
+```text
 .
-├── backend/           # Django-Projekt `server`
-│   ├── shop/          # Modelle für Produkte/Bestellungen, REST-API, Admin
-│   ├── manage.py
-│   └── requirements.txt (verweist auf root)
-├── frontend/          # React + Vite App
-│   └── src/           # components, pages, api, context, data
-└── README.md
+|- backend/              # Django-Projekt "server"
+|  |- server/            # settings.py, urls.py, wsgi.py
+|  |- shop/              # Modelle, Serializers, ViewSets, Admin, Commands
+|  |- manage.py
+|  |- entrypoint.sh
+|- frontend/             # React + Vite App
+|  |- src/
+|     |- components/
+|     |- pages/
+|     |- api/
+|     |- context/
+|     |- i18n/
+|- docker-compose.yml
+|- requirements.txt
+|- README.md
 ```
 
-### Umgesetzte Features
-- Seiten: Auth, Home, Produkte (Liste + Detail), Warenkorb, Checkout, Success, Admin.
-- Warenkorb mit Summen und Versand; Bestellung wird an das Django-API gesendet.
-- Admin: Bestellstatus umstellen, Produkte bearbeiten, Reiter „Logistik“ zeigt Lieferung/Abholung.
-- Fallback-Daten `sampleProducts`, falls das API nicht verfügbar ist.
+## Schnellstart (Docker Compose) - empfohlen
+Voraussetzung: Docker Desktop / Docker Engine laeuft.
 
-### Backend starten (Django)
+```bash
+docker compose up --build -d
+```
+
+Danach:
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8000/api/products/
+- Django Admin: http://localhost:8000/admin/
+
+Optional: Static Files fuer die Admin-Oberflaeche sammeln:
+```bash
+docker compose exec backend python manage.py collectstatic --noinput
+```
+
+## Lokaler Start ohne Docker
+
+### 1) Backend (Django)
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+
 cd backend
 python manage.py migrate
 python manage.py seed_demo_data
 python manage.py runserver
 ```
-Standard ist SQLite. Für PostgreSQL:
-```
+
+Standardmaessig wird SQLite genutzt. Fuer PostgreSQL setze (Windows-Beispiel):
+```bash
 set USE_SQLITE=0
 set POSTGRES_DB=packshop
 set POSTGRES_USER=packshop
@@ -40,29 +77,35 @@ set POSTGRES_HOST=localhost
 set POSTGRES_PORT=5432
 ```
 
-### Frontend starten (React)
+### 2) Frontend (React)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-API-URL per `.env` setzen:
-```
+
+API-URL ueber eine Datei `frontend/.env` setzen:
+```env
 VITE_API_URL=http://localhost:8000/api/
 ```
 
-### Nützliche Befehle
-- Django-Check: `python manage.py check`
-- Frontend-Build: `npm run build`
-- Superuser für /admin (Django): `python manage.py createsuperuser`
+## Nuetzliche Befehle
+- Django Checks: `python manage.py check`
+- Superuser erstellen: `python manage.py createsuperuser`
+- Demo-Daten laden: `python manage.py seed_demo_data`
+- Frontend Build: `npm run build`
 
-### Ideen für später
-- Echte Authentifizierung im SPA (JWT/Sessions) und API absichern.
-- Zahlung, E-Mail-Benachrichtigungen, Mediendateien für Produkte.
-- PostgreSQL als Standard im Deployment nutzen.
-- Über AWS den Betrieb hosten (z.B. EC2/Elastic Beanstalk) und Bestellungen per E-Mail an den Manager zustellen.
+## Deployment-Notizen
+- Fuer den Produktivbetrieb wird Docker Compose verwendet.
+- Ohne Nginx werden Static Files ueber WhiteNoise ausgeliefert.
+- Wenn das Frontend keine API-Daten zeigt, ist meist `VITE_API_URL` falsch.
 
-## 📸 Screenshots
+## Roadmap / Ausblick
+- Admin-Login weiter absichern (Rollen/Permissions, API-Schutz)
+- Medien/Uploads fuer Produkte (statt nur image_url)
+- E-Mail-Workflows (z. B. SES) stabilisieren und beobachten
+- HTTPS + Reverse Proxy (Nginx) fuer Produktion
+
+## Screenshots
 ![Homepage](./frontend/screenshots/Screenshot%202026-01-19%20191854.png)
 ![Homepage](./frontend/screenshots/Screenshot%202026-01-18%20135052.png)
-
