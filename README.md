@@ -1,5 +1,14 @@
 ﻿# Korall 2000 - Verpackungs-Shop (React + Django)
 
+![React](https://img.shields.io/badge/Frontend-React-61dafb?style=for-the-badge&logo=react&logoColor=0b1b33)
+![Django](https://img.shields.io/badge/Backend-Django-092e20?style=for-the-badge&logo=django&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/DevOps-Docker-2496ed?style=for-the-badge&logo=docker&logoColor=white)
+
+## Live Demo / Website
+[![Website](https://img.shields.io/badge/Website-Open-00b0b9?style=for-the-badge)](https://deine-domain.de)
+
+
 Ein praxisnahes Abschlussprojekt: ein Onlineshop fuer Verpackungstueten mit
 React (Vite) im Frontend und Django + Django REST Framework im Backend.
 
