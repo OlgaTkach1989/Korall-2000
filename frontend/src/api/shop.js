@@ -51,3 +51,8 @@ export const fetchHomepageFeatures = async () => {
   const { data } = await client.get("homepage/features/");
   return data;
 };
+
+export const sendChatbotMessage = async (payload) => {
+  const { data } = await client.post("chatbot/", payload);
+  return data;
+};

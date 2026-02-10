@@ -109,6 +109,20 @@ VITE_API_URL=http://localhost:8000/api/
 - Ohne Nginx werden Static Files ueber WhiteNoise ausgeliefert.
 - Wenn das Frontend keine API-Daten zeigt, ist meist `VITE_API_URL` falsch.
 
+## Chatbot (regelbasiert + optional LLM)
+- Endpoint: `POST /api/chatbot/`
+- Frontend-Widget ist unten rechts global eingebunden.
+- Ohne API-Key arbeitet der Bot regelbasiert (Produkte, Versand, Status).
+- Mit LLM-Key antwortet er bei freien Fragen intelligenter.
+
+Optionale Umgebungsvariablen (Backend):
+```env
+OPENAI_API_KEY=dein_api_key
+OPENAI_MODEL=gpt-4o-mini
+# Optional bei Proxy/kompatiblem Gateway:
+OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
 ## Roadmap / Ausblick
 - Admin-Login weiter absichern (Rollen/Permissions, API-Schutz)
 - Medien/Uploads fuer Produkte (statt nur image_url)

@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from .views import (
+    chatbot_view,
     OrderViewSet,
     ProductViewSet,
     dashboard_summary,
@@ -20,4 +21,5 @@ urlpatterns = [
     path("auth/login/", login_view, name="login"),
     path("dashboard/summary/", dashboard_summary, name="dashboard-summary"),
     path("homepage/features/", homepage_features, name="homepage-features"),
+    path("chatbot/", chatbot_view, name="chatbot"),
 ]

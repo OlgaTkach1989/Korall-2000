@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useI18n } from "../context/I18nContext";
+import ChatbotWidget from "./ChatbotWidget";
 
 const Layout = ({ children }) => {
   const { items } = useCart();
@@ -69,6 +70,7 @@ const Layout = ({ children }) => {
         </nav>
       </header>
       <main>{children}</main>
+      <ChatbotWidget />
     </div>
   );
 };
