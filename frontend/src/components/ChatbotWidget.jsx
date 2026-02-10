@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { sendChatbotMessage } from "../api/shop";
 import { useI18n } from "../context/I18nContext";
 
@@ -17,6 +17,12 @@ const ChatbotWidget = () => {
     },
   ]);
   const [suggestions, setSuggestions] = useState(["Versandkosten", "Lieferzeit"]);
+  const messagesRef = useRef(null);
+
+  useEffect(() => {
+    if (!messagesRef.current || !open) return;
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+  }, [messages, open]);
 
   const ask = async (text) => {
     const question = text.trim();
@@ -57,7 +63,7 @@ const ChatbotWidget = () => {
             </button>
           </div>
 
-          <div className="chatbot-messages">
+          <div className="chatbot-messages" ref={messagesRef}>
             {messages.map((message, index) => (
               <div
                 key={`${message.role}-${index}`}

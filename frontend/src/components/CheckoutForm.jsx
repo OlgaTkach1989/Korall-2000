@@ -43,9 +43,13 @@ const CheckoutForm = () => {
     };
 
     try {
-      await createOrder(payload);
+      const createdOrder = await createOrder(payload);
+      const orderId = createdOrder?.id;
+      if (orderId != null) {
+        localStorage.setItem("lastOrderId", String(orderId));
+      }
       clear();
-      navigate("/order-success");
+      navigate("/order-success", { state: { orderId } });
     } catch (err) {
       setError(t("checkout.error"));
     } finally {

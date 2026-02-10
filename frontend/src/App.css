@@ -695,6 +695,7 @@ main {
 .chatbot-messages {
   max-height: 280px;
   overflow: auto;
+  scroll-behavior: smooth;
   padding: 0.8rem;
   display: flex;
   flex-direction: column;

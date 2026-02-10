@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 
 const SuccessPage = () => {
   const { t } = useI18n();
-  const number = Math.floor(Math.random() * 9000 + 1000);
+  const location = useLocation();
+  const stateOrderId = location.state?.orderId;
+  const savedOrderId = localStorage.getItem("lastOrderId");
+  const number = stateOrderId ?? savedOrderId ?? "-";
 
   return (
     <section className="success-page">

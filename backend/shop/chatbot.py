@@ -17,6 +17,7 @@ def try_llm_reply(message, language="de", context_text=""):
     system_prompt = (
         "You are a shop assistant for Korall 2000 (packaging products). "
         f"Always answer in {lang_label}. "
+        "If language is German, write natural German with umlauts (ä, ö, ü) and ß when appropriate. "
         "Be concise, practical, and do not invent unavailable data. "
         "If order status is requested, ask for order number when missing. "
         "If shipping is asked, mention: shipping is 4 EUR, free from 100 EUR subtotal. "

@@ -172,6 +172,29 @@ def chatbot_view(request):
         suggestions = ["Versandkosten", "Produkte anzeigen", "Status Bestellung #1"]
         return Response({"reply": reply, "suggestions": suggestions, "source": "rules"})
 
+    if (
+        any(word in text for word in ["schwere", "schwer", "heavy"])
+        and any(
+            word in text
+            for word in ["produkt", "produkte", "product", "verpackung", "packaging"]
+        )
+    ):
+        nass_product = Product.objects.filter(is_active=True, name__icontains="nass").first()
+        if nass_product:
+            reply = (
+                f"Fuer schwere Produkte empfehle ich: {nass_product.name} (ab {nass_product.minimum_price} EUR)."
+                if language == "de"
+                else f"For heavy products I recommend: {nass_product.name} (from {nass_product.minimum_price} EUR)."
+            )
+        else:
+            reply = (
+                "Fuer schwere Produkte empfehle ich die NASS Tragetuete."
+                if language == "de"
+                else "For heavy products I recommend the NASS carrier bag."
+            )
+        suggestions = ["Produkte anzeigen", "Versandkosten", "Lieferzeit"]
+        return Response({"reply": reply, "suggestions": suggestions, "source": "rules"})
+
     if any(word in text for word in ["produkt", "produkte", "product", "products"]):
         products = Product.objects.filter(is_active=True).order_by("minimum_price")[:5]
         if products:
